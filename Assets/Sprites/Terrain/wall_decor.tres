@@ -1,0 +1,15 @@
+[gd_resource type="TileSet" format=3 uid="uid://big4unltyy0da"]
+
+[ext_resource type="Texture2D" uid="uid://3jnymfqc0ujl" path="res://Assets/Sprites/Terrain/26_Condominium.png" id="1_l54iq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_24s0m"]
+texture = ExtResource("1_l54iq")
+6:16/size_in_atlas = Vector2i(3, 2)
+6:16/0 = 0
+6:16/0/texture_origin = Vector2i(0, 7)
+6:14/size_in_atlas = Vector2i(3, 2)
+6:14/0 = 0
+6:14/0/texture_origin = Vector2i(0, 7)
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_24s0m")

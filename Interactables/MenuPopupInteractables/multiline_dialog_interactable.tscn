@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://wiccfqrik57v"]
+
+[ext_resource type="Script" uid="uid://b230tx5p7tu7b" path="res://Interactables/MenuPopupInteractables/multiline_dialog_interactable.gd" id="1_stplr"]
+[ext_resource type="PackedScene" uid="uid://db1erxlwymrc4" path="res://Interactables/InteractableObjectUI/dialog_menu.tscn" id="2_stplr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3oqts"]
+size = Vector2(20, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_805dp"]
+radius = 77.0
+
+[node name="SignPopUpInteractable" type="StaticBody2D" unique_id=1732990632]
+script = ExtResource("1_stplr")
+dialog = "uuuuuuuuuuu
+[line]
+ahhhhhhhhhhhhh"
+menu_scene = ExtResource("2_stplr")
+interactable_name = "sign"
+interaction_verb = "read"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210414949]
+texture = SubResource("PlaceholderTexture2D_3oqts")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=141630291]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=562891596]
+shape = SubResource("CircleShape2D_805dp")

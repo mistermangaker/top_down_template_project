@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://nvydwcpyo0vj"]
+
+[ext_resource type="Script" uid="uid://cpf8kv6qcd7ly" path="res://GameScene/Managers/game_manager.gd" id="1_onf2v"]
+[ext_resource type="PackedScene" uid="uid://cstdxwns6y1j7" path="res://Levels/test_scene.tscn" id="2_buha4"]
+[ext_resource type="Script" uid="uid://cvl4738jlr58u" path="res://GameScene/Managers/scene_manager.gd" id="3_6ynty"]
+[ext_resource type="Script" uid="uid://bhykfq6kopura" path="res://GameScene/Managers/game_systems.gd" id="3_ctvmi"]
+[ext_resource type="Script" uid="uid://dajqse6vssilc" path="res://GameScene/Managers/player_input_detector.gd" id="3_wo00q"]
+[ext_resource type="PackedScene" uid="uid://ckf3vrw7jg20" path="res://GameScene/Managers/ui_manager.tscn" id="4_e2ns8"]
+
+[node name="Game" type="Node" unique_id=1547121126]
+script = ExtResource("1_onf2v")
+starting_scene = ExtResource("2_buha4")
+
+[node name="Systems" type="Node" parent="." unique_id=1104527757 node_paths=PackedStringArray("player_input_detector")]
+process_mode = 3
+script = ExtResource("3_ctvmi")
+player_input_detector = NodePath("PlayerInputDetector")
+
+[node name="PlayerInputDetector" type="Node" parent="Systems" unique_id=1439992887]
+process_mode = 3
+process_priority = 2
+process_physics_priority = 2
+script = ExtResource("3_wo00q")
+
+[node name="SceneManager" type="Node" parent="." unique_id=1621697619]
+script = ExtResource("3_6ynty")
+
+[node name="UIManager" parent="." unique_id=1261052401 instance=ExtResource("4_e2ns8")]

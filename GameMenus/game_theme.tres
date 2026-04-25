@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cg5ck2xb78ke7"]
+
+[ext_resource type="FontFile" uid="uid://4c3nt46vgepj" path="res://GameMenus/PixelifySans-VariableFont_wght.ttf" id="1_7iu0v"]
+
+[resource]
+default_font = ExtResource("1_7iu0v")
+default_font_size = 12

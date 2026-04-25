@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://drjcv1wxv3g36"]
+
+[ext_resource type="Script" uid="uid://cbuhuavrd144e" path="res://Characters/AgentVisuals/visuals.gd" id="1_1hln3"]
+[ext_resource type="SpriteFrames" uid="uid://d1fghejn8fav5" path="res://Assets/Sprites/CharacterSprites/default_dan.tres" id="2_cdxwv"]
+
+[node name="AgentVisuals" type="Node2D" unique_id=2116964683 node_paths=PackedStringArray("animated_sprite_2d", "carry_sprite")]
+script = ExtResource("1_1hln3")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+carry_sprite = NodePath("Sprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1621311481]
+sprite_frames = ExtResource("2_cdxwv")
+animation = &"idle_south"
+autoplay = "idle_south"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=724638326]

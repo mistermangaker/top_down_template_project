@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c8fdfo73hh5os"]
+
+[ext_resource type="Script" uid="uid://dlqeh56rupfxq" path="res://GameMenus/Menus/main_menu.gd" id="1_jf8mj"]
+[ext_resource type="PackedScene" uid="uid://7xxc4n056xju" path="res://GameMenus/Menus/game_options.tscn" id="2_jvm6x"]
+
+[node name="MainMenu" type="Control" unique_id=1746652833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf8mj")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1299194384]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1825408174]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -99.5
+offset_right = 202.0
+offset_bottom = 99.5
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=359354159]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1319496043]
+layout_mode = 2
+text = "Start
+"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=269744516]
+layout_mode = 2
+text = "Options
+"
+
+[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1862367235]
+layout_mode = 2
+text = "Quit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1342585227]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -555.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="GameTitleLabel" type="Label" parent="MarginContainer2" unique_id=1537150754]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Game Title"
+horizontal_alignment = 2
+
+[node name="GameOptions" parent="." unique_id=1171976347 instance=ExtResource("2_jvm6x")]
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

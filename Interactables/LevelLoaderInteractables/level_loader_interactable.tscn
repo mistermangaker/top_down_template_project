@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ckhuclxelm8rf"]
+
+[ext_resource type="Script" uid="uid://nonjhqwviebl" path="res://Interactables/LevelLoaderInteractables/level_loader_interactable.gd" id="1_cirdo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3oqts"]
+size = Vector2(20, 20)
+
+[node name="BaseInteractable" type="StaticBody2D" unique_id=1732990632]
+script = ExtResource("1_cirdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210414949]
+texture = SubResource("PlaceholderTexture2D_3oqts")

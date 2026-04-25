@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://ckf3vrw7jg20"]
+
+[ext_resource type="Script" uid="uid://4d3crqmeasfn" path="res://GameScene/Managers/ui_manager.gd" id="1_gnfco"]
+[ext_resource type="PackedScene" uid="uid://ck6em6h2a66n6" path="res://GameMenus/Menus/pause_screen_ui.tscn" id="2_x0yu6"]
+[ext_resource type="PackedScene" uid="uid://7xxc4n056xju" path="res://GameMenus/Menus/game_options.tscn" id="3_4ie3f"]
+[ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="3_hxj2x"]
+[ext_resource type="Script" uid="uid://pt3crctncfvc" path="res://GameScene/Managers/transition_screen.gd" id="6_7xa65"]
+
+[sub_resource type="Animation" id="Animation_4fg8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7xa65"]
+resource_name = "fade_to_black"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 0.20306304, 0.26794335),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oeuc5"]
+resource_name = "wipe_to_right"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fg8c"]
+_data = {
+&"RESET": SubResource("Animation_4fg8c"),
+&"fade_to_black": SubResource("Animation_7xa65"),
+&"wipe_to_right": SubResource("Animation_oeuc5")
+}
+
+[node name="UIManager" type="Node" unique_id=1261052401]
+process_mode = 3
+script = ExtResource("1_gnfco")
+
+[node name="InWorldUI" type="Node2D" parent="." unique_id=1065882735]
+
+[node name="TransitionScreen" type="CanvasLayer" parent="." unique_id=463831947]
+script = ExtResource("6_7xa65")
+
+[node name="ColorRect" type="ColorRect" parent="TransitionScreen" unique_id=2134380332]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="TransitionScreen/ColorRect" unique_id=1809356513]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -22.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "ahhhhhhh"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionScreen" unique_id=2081991030]
+libraries/ = SubResource("AnimationLibrary_4fg8c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=198240999]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1578564987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_hxj2x")
+
+[node name="DynamicUI" type="Control" parent="CanvasLayer/Control" unique_id=1712594895]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PauseScreenUI" parent="CanvasLayer/Control" unique_id=365450897 instance=ExtResource("2_x0yu6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="GameOptions" parent="CanvasLayer/Control" unique_id=1171976347 instance=ExtResource("3_4ie3f")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_right = 17.0

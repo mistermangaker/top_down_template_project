@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://csmm44krqfu2a"]
+
+[ext_resource type="PackedScene" uid="uid://cnbvtw67b2s4p" path="res://GameMenus/Menus/Widgets/options_settings_widget.tscn" id="1_rh5cw"]
+[ext_resource type="Script" uid="uid://txefro3n0a02" path="res://GameMenus/Menus/Widgets/window_mode_button.gd" id="2_xhlae"]
+
+[node name="Window_Mode_Button" unique_id=346404865 instance=ExtResource("1_rh5cw")]
+script = ExtResource("2_xhlae")
+
+[node name="OptionSettingLabel" parent="." index="0" unique_id=906897713]
+text = "Window Mode"

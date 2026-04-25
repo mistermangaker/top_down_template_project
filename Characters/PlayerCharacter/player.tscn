@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://7q8vebrbubhv"]
+
+[ext_resource type="Script" uid="uid://dyub3dp6q6ryk" path="res://Characters/PlayerCharacter/player_body.gd" id="1_ug0nu"]
+[ext_resource type="PackedScene" uid="uid://drjcv1wxv3g36" path="res://Characters/AgentVisuals/entity_visuals.tscn" id="2_njvj3"]
+[ext_resource type="Script" uid="uid://dll2nje6edn5n" path="res://Characters/PlayerCharacter/player_state_machine.gd" id="3_wvkug"]
+[ext_resource type="Script" uid="uid://bfs3cir5o11we" path="res://Characters/PlayerCharacter/normal_state.gd" id="4_gww8v"]
+[ext_resource type="Script" uid="uid://dygvq10txwlxm" path="res://Characters/StateMachine/PlayerStates/movement_state.gd" id="5_u53e1"]
+[ext_resource type="Script" uid="uid://cno48mxxjydrm" path="res://Characters/StateMachine/PlayerStates/idle_state.gd" id="6_l8bmj"]
+[ext_resource type="Script" uid="uid://debscruulu24x" path="res://Characters/PlayerCharacter/pre_delete.gd" id="7_fhf5b"]
+[ext_resource type="Script" uid="uid://bu4p8xjfpen3r" path="res://Interactables/BaseScripts/interactable_detector.gd" id="8_dgbqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_304s7"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_83qa3"]
+radius = 28.01785
+
+[node name="Player" type="CharacterBody2D" unique_id=2074472804 node_paths=PackedStringArray("interactable_detector", "agent_visuals") groups=["player"]]
+y_sort_enabled = true
+texture_filter = 1
+motion_mode = 1
+script = ExtResource("1_ug0nu")
+interactable_detector = NodePath("InteractableDetector")
+agent_visuals = NodePath("AgentVisuals")
+entity_move_speed = 150.0
+metadata/_custom_type_script = "uid://dyub3dp6q6ryk"
+
+[node name="AgentVisuals" parent="." unique_id=2116964683 instance=ExtResource("2_njvj3")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1905652931]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_304s7")
+
+[node name="StateMachine" type="Node" parent="." unique_id=759076614 node_paths=PackedStringArray("initial_state_node")]
+process_mode = 4
+script = ExtResource("3_wvkug")
+initial_state_node = NodePath("enabled")
+
+[node name="enabled" type="Node" parent="StateMachine" unique_id=1251509740 node_paths=PackedStringArray("default")]
+script = ExtResource("4_gww8v")
+default = NodePath("on_idle")
+
+[node name="on_movement" type="Node" parent="StateMachine/enabled" unique_id=1886721321]
+script = ExtResource("5_u53e1")
+
+[node name="on_idle" type="Node" parent="StateMachine/enabled" unique_id=184289548]
+script = ExtResource("6_l8bmj")
+
+[node name="disabled" type="Node" parent="StateMachine" unique_id=1113031124]
+script = ExtResource("7_fhf5b")
+
+[node name="InteractableDetector" type="Area2D" parent="." unique_id=430398800]
+script = ExtResource("8_dgbqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableDetector" unique_id=1422874078]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_83qa3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1487647766]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ow57xa18n8on"]
+
+[ext_resource type="Script" uid="uid://dsgqwoxq4u5i8" path="res://Interactables/PassiveInteractables/door.gd" id="1_1hvwm"]
+[ext_resource type="Texture2D" uid="uid://b0ucbpr2iet5f" path="res://Assets/Sprites/Terrain/door.tres" id="2_60qjn"]
+[ext_resource type="Texture2D" uid="uid://xc2q7ui3eg3s" path="res://Assets/Sprites/Terrain/door_open.tres" id="3_qq6m7"]
+
+[node name="Door" type="Area2D" unique_id=60408114 groups=["doors"]]
+script = ExtResource("1_1hvwm")
+closed_texture = ExtResource("2_60qjn")
+open_texture = ExtResource("3_qq6m7")
+
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=1436435937]
+position = Vector2(7.5, 0)
+scale = Vector2(1.03125, 1)
+texture = ExtResource("2_60qjn")
+offset = Vector2(0, -8)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

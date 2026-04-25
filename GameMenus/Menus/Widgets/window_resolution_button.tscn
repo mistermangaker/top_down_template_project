@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dptn6hh5jvqx"]
+
+[ext_resource type="PackedScene" uid="uid://cnbvtw67b2s4p" path="res://GameMenus/Menus/Widgets/options_settings_widget.tscn" id="1_4payk"]
+[ext_resource type="Script" uid="uid://dp5g6mujjb730" path="res://GameMenus/Menus/Widgets/window_resolution_button.gd" id="2_nxkmn"]
+
+[node name="Window_Resolution_Button" unique_id=346404865 instance=ExtResource("1_4payk")]
+script = ExtResource("2_nxkmn")
+
+[node name="OptionSettingLabel" parent="." index="0" unique_id=906897713]
+text = "Resolution"

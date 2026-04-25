@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dx0a4d5me4316"]
+
+[ext_resource type="Script" uid="uid://cofidvw0bctyf" path="res://Interactables/InteractableObjectUI/simple_text_menu_closeable_ui.gd" id="1_hgw6k"]
+
+[node name="TextDisplayMenu" type="Control" unique_id=2125204783]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hgw6k")
+
+[node name="Control" type="Control" parent="." unique_id=506821144]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=478169381]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -108.5
+offset_right = 151.0
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer" unique_id=839428188]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer" unique_id=178492566]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=1616160024]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "Header"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=2084215149]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "some text"
+fit_content = true
+
+[node name="Button" type="Button" parent="Control/PanelContainer/MarginContainer/VBoxContainer" unique_id=574356612]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Close"
+
+[connection signal="pressed" from="Control/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cnbvtw67b2s4p"]
+
+[node name="OptionsSettingsDropDown" type="HBoxContainer" unique_id=346404865]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="OptionSettingLabel" type="Label" parent="." unique_id=906897713]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 0
+text = "ACTION"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=188776516]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="SettingsButton" type="OptionButton" parent="." unique_id=126634628]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0

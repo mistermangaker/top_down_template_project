@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d3jcfx3uaq1rs"]
+
+[ext_resource type="Script" uid="uid://4kjwnna4evtc" path="res://Interactables/BaseScripts/placeholder_interactable_object.gd" id="1_jktej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3oqts"]
+size = Vector2(20, 20)
+
+[node name="PlaceHolderInteractable" type="StaticBody2D" unique_id=1732990632]
+script = ExtResource("1_jktej")
+interactable_name = "placeholder"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210414949]
+texture = SubResource("PlaceholderTexture2D_3oqts")

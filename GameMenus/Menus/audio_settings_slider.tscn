@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bcb2egg4im43g"]
+
+[ext_resource type="Script" uid="uid://cnmitggcjkbxi" path="res://GameMenus/Menus/audio_settings_slider.gd" id="1_dkcem"]
+
+[node name="AudioSettingsSlider" type="HBoxContainer" unique_id=1659974738]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dkcem")
+
+[node name="AudioSettingLabel" type="Label" parent="." unique_id=1691589903]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator" type="VSeparator" parent="." unique_id=1521115965]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=311404350]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PercentageSlider" type="HSlider" parent="HBoxContainer" unique_id=1479461019]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="PercentageLabel" type="Label" parent="HBoxContainer" unique_id=1179696270]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "99%"
+horizontal_alignment = 1

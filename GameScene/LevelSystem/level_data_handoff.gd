@@ -1,0 +1,4 @@
+class_name LevelDataHandoff extends RefCounted
+
+var player_facing_direction:EntityVisuals.FacingDirection
+var door_id:String

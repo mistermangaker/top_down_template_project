@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://db1erxlwymrc4"]
+
+[ext_resource type="Script" uid="uid://bfofu8ps0tm2q" path="res://Interactables/InteractableObjectUI/dialog_menu_closable_ui.gd" id="1_713bm"]
+
+[node name="Control" type="Control" unique_id=1599262593]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_713bm")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1416878311]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1656162888]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer" unique_id=1954761761]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=1468281808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ahhhhhhhhhhhh"
+
+[node name="NextButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=380292880]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "\\/"
+flat = true
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/NextButton" to="." method="_on_button_pressed"]
