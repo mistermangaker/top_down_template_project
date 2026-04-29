@@ -13,12 +13,16 @@ script = ExtResource("1_713bm")
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=1416878311]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 179.0
+offset_left = 34.0
+offset_top = -66.0
+offset_right = -26.0
+offset_bottom = -5.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1656162888]
 layout_mode = 2
@@ -35,6 +39,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
 text = "ahhhhhhhhhhhh"
 
 [node name="NextButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=380292880]

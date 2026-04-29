@@ -8,10 +8,11 @@ const tag = "[line]"
 
 func set_text(text:String)->void:
 	var split = text.split(tag)
-	for i in split:
+	for i:String in split:
+		i = i.strip_edges()
 		lines.append(i.trim_prefix(tag))
 	show_dialog_line(0)
-	
+
 func show_dialog_line(next_index:int)->void:
 	if lines.size()<=next_index:
 		

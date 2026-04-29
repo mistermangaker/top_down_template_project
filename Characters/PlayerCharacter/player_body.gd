@@ -2,12 +2,16 @@ class_name Player extends Entity
 @export var interactable_detector: InteractableDetector 
 @onready var state_machine: Node = $StateMachine
 
+##if present override the defualt sprite sheet with this on start up otherwise keeps the default
+@export var override_sprite_sheet:SpriteFrames
+
 static var instance:Player
 
 func _ready() -> void:
 	interactable_detector.new_closest_detected.connect(_on_interactable_detector_new_closest_detected)
 	interactable_detector.no_closest_detected.connect(_on_interactable_detector_no_closest_detected)
-
+	if override_sprite_sheet:
+		agent_visuals.set_sprite_frames(override_sprite_sheet)
 
 func _enter_tree() -> void:
 	instance = self
