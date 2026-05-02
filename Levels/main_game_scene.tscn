@@ -926,18 +926,18 @@ autostart = true
 [node name="RightSide" type="Node" parent="NPC_Manager" unique_id=1367492332]
 
 [node name="Node2D" type="Node2D" parent="NPC_Manager/RightSide" unique_id=1410089825]
-position = Vector2(536, 283)
+position = Vector2(484, 288)
 
 [node name="Node2D2" type="Node2D" parent="NPC_Manager/RightSide" unique_id=1364443416]
-position = Vector2(524, 308)
+position = Vector2(473, 302)
 
 [node name="LeftSide" type="Node" parent="NPC_Manager" unique_id=9227054]
 
 [node name="Node2D" type="Node2D" parent="NPC_Manager/LeftSide" unique_id=16194088]
-position = Vector2(-145, 283)
+position = Vector2(-145, 286)
 
 [node name="Node2D2" type="Node2D" parent="NPC_Manager/LeftSide" unique_id=217505140]
-position = Vector2(-157, 308)
+position = Vector2(-157, 301)
 
 [node name="Player" parent="." unique_id=2074472804 instance=ExtResource("1_3x0gg")]
 position = Vector2(308, 110)

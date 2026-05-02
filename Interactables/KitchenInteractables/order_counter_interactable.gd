@@ -27,6 +27,8 @@ func set_random_timer()->void:
 func spawn_new_npc()->void:
 	if !GameLevel.current.game_is_running:
 		return
+	if cached_npc !=null:
+		return
 	cached_npc = await npc_manager.spawn_customer()
 	cached_npc.set_destination(interaction_spot.global_position)
 	cached_npc.npc_reached_destination.connect(set_customer_order)
