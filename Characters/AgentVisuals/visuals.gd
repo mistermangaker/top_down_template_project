@@ -54,7 +54,7 @@ func get_vector_of_facing_direction()->Vector2:
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	#(global_position -previous_position).normalized()
-	var player = get_parent() as Player
+	var player = get_parent() as Entity
 	movement_dir = player.velocity.normalized()
 	
 	if player.velocity!= Vector2.ZERO:
@@ -163,11 +163,13 @@ func set_carry_sprite(texture:Texture2D,tex_scale:Vector2=Vector2.ONE,offset:Vec
 	carry_sprite.texture = texture
 	carry_sprite.scale = tex_scale
 	carry_sprite.offset = offset
+	update_animation()
 
 func clear_carry_sprite()->void:
 	carry_sprite.texture = null
 	carry_sprite.scale = Vector2.ONE
 	carry_sprite.offset = Vector2()
+	update_animation()
 
 
 
@@ -207,7 +209,7 @@ func is_animation_done()->bool:
 
 const WALK_ANIM = "walking"
 const IDLE_ANIM = "idle"
-const WALK_CARRY_ANIM ="carrywalk"
+const WALK_CARRY_ANIM ="carrywalking"
 const IDLE_CARRY_ANIM = "carryidle"
 
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://buykjjuoqt8tn"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_hyteh"]
+[ext_resource type="Texture2D" uid="uid://ck87mykjf63g0" path="res://Assets/Sprites/ItemSprites/Milanesa crust brunt.png" id="2_fua4j"]
+
+[resource]
+script = ExtResource("1_hyteh")
+texture = ExtResource("2_fua4j")
+display_name = "BURNT_MILANESA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

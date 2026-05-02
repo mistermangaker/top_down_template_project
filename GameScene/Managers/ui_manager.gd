@@ -1,5 +1,7 @@
 class_name UIManager extends Node
 @onready var in_world_ui: Node2D = $InWorldUI
+@onready var orders_ui: OrdersUI = %OrdersUI
+@onready var ui_audio: UIAudioManager = $UIAudio
 
 @onready var pause_screen_ui: Control = %PauseScreenUI
 @onready var game_options: Control = %GameOptions
@@ -71,7 +73,7 @@ func spawn_in_world_ui(text, at_position:Vector2)->void:
 		rich_text_label.bbcode_enabled =true
 		rich_text_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 		rich_text_label.push_font_size(8)
-		rich_text_label.append_text(text)
+		rich_text_label.append_text(" "+text)
 		
 		in_world_ui.add_child(rich_text_label)
 		rich_text_label.theme = GAME_THEME

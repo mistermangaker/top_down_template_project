@@ -21,7 +21,8 @@ func get_action_string()->String:
 func get_state_and_child()->String:
 	return name
 
-func initialize(_statem_machine: StateMachine)->void:
+@warning_ignore("unused_parameter")
+func initialize(state_machine: StateMachine)->void:
 	pass
 
 func start()->void:

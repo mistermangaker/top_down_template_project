@@ -1,0 +1,390 @@
+[gd_scene format=3 uid="uid://bkq2m2nhg0wej"]
+
+[ext_resource type="Script" uid="uid://danuvtvwgwwkp" path="res://Interactables/KitchenInteractables/grill_interactable.gd" id="1_hpof6"]
+[ext_resource type="Script" uid="uid://ch8loht4hqoc1" path="res://GameItems/Scripts/cooking_recipe.gd" id="2_n6nke"]
+[ext_resource type="Resource" uid="uid://uve7udaeqcr6" path="res://GameItems/Items/BaseIngredients/raw_meat.tres" id="3_k4v3e"]
+[ext_resource type="Resource" uid="uid://c3e0a3ar24wr7" path="res://GameItems/Items/BaseIngredients/meat_cooked.tres" id="4_ygt4w"]
+[ext_resource type="Resource" uid="uid://c751l7xhp7kw6" path="res://GameItems/Items/BaseIngredients/meat_burnt.tres" id="5_3ah7k"]
+[ext_resource type="Resource" uid="uid://3pl7rc4tobe4" path="res://GameItems/Items/FinishedFoods/pizza_raw.tres" id="5_ssjh6"]
+[ext_resource type="Script" uid="uid://dvsqqf57incp4" path="res://GameItems/Scripts/item_holder.gd" id="5_ygt4w"]
+[ext_resource type="Texture2D" uid="uid://genllime8y6w" path="res://Assets/Sprites/Terrain/Singles/animated_kitchen_oven_4cookers_pan.png" id="6_3ah7k"]
+[ext_resource type="Resource" uid="uid://cg7otj3vp7237" path="res://GameItems/Items/FinishedFoods/pizza_finished.tres" id="6_i6jcv"]
+[ext_resource type="Texture2D" uid="uid://384id6p1ihpb" path="res://Assets/Sprites/UISprites/bar_ui.png" id="6_mnqtw"]
+[ext_resource type="Texture2D" uid="uid://6l115wyfh8ew" path="res://Assets/Sprites/Terrain/Singles/animated_kitchen_oven_4cookers_pan_off.png" id="7_0jagj"]
+[ext_resource type="Resource" uid="uid://b24jwbphqceqi" path="res://GameItems/Items/BaseIngredients/egg.tres" id="7_x6ghi"]
+[ext_resource type="Texture2D" uid="uid://dfs141jkwv3tm" path="res://Assets/Cheese.png" id="7_ygt4w"]
+[ext_resource type="PackedScene" uid="uid://dvpncp5cnu52q" path="res://GameItems/Scripts/held_items_visual.tscn" id="8_0jagj"]
+[ext_resource type="Resource" uid="uid://bmtqyrx4wh6wj" path="res://GameItems/Items/BaseIngredients/egg_cooked.tres" id="8_dyefl"]
+[ext_resource type="Resource" uid="uid://dj0b733m5wnwp" path="res://GameItems/Items/BaseIngredients/potato_raw.tres" id="11_2wm8r"]
+[ext_resource type="Resource" uid="uid://cd030pei6ptcj" path="res://GameItems/Items/BaseIngredients/potato_baked.tres" id="12_x00ql"]
+[ext_resource type="Resource" uid="uid://yf2ys8t05pls" path="res://GameItems/Items/FinishedFoods/empanda_raw.tres" id="13_40kko"]
+[ext_resource type="Resource" uid="uid://chsjgs6ifncul" path="res://GameItems/Items/FinishedFoods/empanda_cooked.tres" id="14_sgphi"]
+[ext_resource type="Resource" uid="uid://bflbo5iiiw5rg" path="res://GameItems/Items/FinishedFoods/grilled_cheese_raw.tres" id="15_mhmok"]
+[ext_resource type="Resource" uid="uid://binsdcxkbmmo1" path="res://GameItems/Items/FinishedFoods/grilled_cheese_cooked.tres" id="16_jmbki"]
+[ext_resource type="Resource" uid="uid://db324shadacp7" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_raw.tres" id="17_t111r"]
+[ext_resource type="Resource" uid="uid://cg67tfujak2of" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_cooked.tres" id="18_djil6"]
+[ext_resource type="Resource" uid="uid://di74jxad82sdh" path="res://GameItems/Items/FinishedFoods/mianesa_raw.tres" id="19_x00ql"]
+[ext_resource type="Resource" uid="uid://mpkcccxc0h60" path="res://GameItems/Items/FinishedFoods/mianesa_cooked.tres" id="20_40kko"]
+[ext_resource type="Resource" uid="uid://kwptys2g81bk" path="res://GameItems/Items/FinishedFoods/pizza_burnt.tres" id="20_igfnl"]
+[ext_resource type="Resource" uid="uid://bffb2md5w8fhj" path="res://GameItems/Items/BaseIngredients/egg_burnt.tres" id="21_16ky0"]
+[ext_resource type="Resource" uid="uid://b0u5ki82hv2ff" path="res://GameItems/Items/BaseIngredients/potato_burnt.tres" id="23_33pkx"]
+[ext_resource type="Resource" uid="uid://dhw8sch1c32pn" path="res://GameItems/Items/FinishedFoods/empanda_burnt.tres" id="24_gxthb"]
+[ext_resource type="Resource" uid="uid://cd1s1rquxir4k" path="res://GameItems/Items/FinishedFoods/grilled_cheese_burnt.tres" id="25_dcjsd"]
+[ext_resource type="Resource" uid="uid://77iu0oqlu5vn" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_burnt.tres" id="26_7tj6e"]
+[ext_resource type="Resource" uid="uid://buykjjuoqt8tn" path="res://GameItems/Items/FinishedFoods/mianesa_burnt.tres" id="29_sgphi"]
+[ext_resource type="AudioStream" uid="uid://csmyk20v1dj6j" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).ogg" id="33_x6ghi"]
+[ext_resource type="AudioStream" uid="uid://6mhbhrfwopua" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Saw).ogg" id="34_dyefl"]
+[ext_resource type="AudioStream" uid="uid://1ey6p355sth0" path="res://Assets/Audio/grill_sizzling.ogg" id="35_dyefl"]
+[ext_resource type="AudioStream" uid="uid://choejig6kqqr5" path="res://Assets/Audio/alert.ogg" id="36_doxwc"]
+
+[sub_resource type="Resource" id="Resource_0jagj"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("3_k4v3e")
+output_item = ExtResource("4_ygt4w")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_52203"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("5_ssjh6")
+output_item = ExtResource("6_i6jcv")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_7ngdb"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("7_x6ghi")
+output_item = ExtResource("8_dyefl")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_s7gri"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("11_2wm8r")
+output_item = ExtResource("12_x00ql")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_rfelk"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("13_40kko")
+output_item = ExtResource("14_sgphi")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_lbu5h"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("15_mhmok")
+output_item = ExtResource("16_jmbki")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_cvos4"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("17_t111r")
+output_item = ExtResource("18_djil6")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_mhmok"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("19_x00ql")
+output_item = ExtResource("20_40kko")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_rh7kd"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("4_ygt4w")
+output_item = ExtResource("5_3ah7k")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_jqnkg"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("6_i6jcv")
+output_item = ExtResource("20_igfnl")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_qkak6"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("8_dyefl")
+output_item = ExtResource("21_16ky0")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_66qrl"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("12_x00ql")
+output_item = ExtResource("23_33pkx")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_m05oi"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("14_sgphi")
+output_item = ExtResource("24_gxthb")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_dnwec"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("16_jmbki")
+output_item = ExtResource("25_dcjsd")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_aslym"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("18_djil6")
+output_item = ExtResource("26_7tj6e")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="Resource" id="Resource_jmbki"]
+script = ExtResource("2_n6nke")
+input_Item = ExtResource("20_40kko")
+output_item = ExtResource("29_sgphi")
+metadata/_custom_type_script = "uid://ch8loht4hqoc1"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh7kd"]
+atlas = ExtResource("6_3ah7k")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w02wq"]
+atlas = ExtResource("6_3ah7k")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtrpl"]
+atlas = ExtResource("6_3ah7k")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10dm8"]
+atlas = ExtResource("6_3ah7k")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htmnp"]
+atlas = ExtResource("7_0jagj")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jv8w"]
+atlas = ExtResource("7_0jagj")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vewwa"]
+atlas = ExtResource("7_0jagj")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e3y5"]
+atlas = ExtResource("7_0jagj")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73bvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh7kd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w02wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtrpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10dm8")
+}],
+"loop": true,
+"name": &"cooking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htmnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jv8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vewwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6e3y5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40xn7"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_n6nke"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TextureProgressBar:tint_progress:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%TextureProgressBar:tint_progress:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%TextureProgressBar:tint_progress:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.25882354, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%TextureProgressBar:tint_progress:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_k4v3e"]
+resource_name = "flashing"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%TextureProgressBar:tint_progress:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0, 1, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5, 0.76666665, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%TextureProgressBar:tint_progress:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0, 0, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5, 0.76666665, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%TextureProgressBar:tint_progress:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
+"points": PackedFloat32Array(0.25882354, -0.25, 0, 0.25, 0, 0.12156863, -0.09316667, 0, 0.07333334, 0, 0.25882354, -0.1665, 0, 0, 0, 0.12156863, -0.09316667, 0, 0.07333334, 0, 0.25882354, -0.1665, 0, 0, 0),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5, 0.76666665, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%TextureProgressBar:tint_progress:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0, 2),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0, 1, -0.09316667, 0, 0.07333334, 0, 1, -0.1665, 0, 0, 0),
+"times": PackedFloat32Array(0.001, 0.26666668, 0.5, 0.76666665, 1)
+}
+
+[sub_resource type="Animation" id="Animation_ygt4w"]
+resource_name = "none"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ah7k"]
+_data = {
+&"RESET": SubResource("Animation_n6nke"),
+&"flashing": SubResource("Animation_k4v3e"),
+&"none": SubResource("Animation_ygt4w")
+}
+
+[node name="GrillInteractable" type="StaticBody2D" unique_id=1917936089]
+y_sort_enabled = true
+script = ExtResource("1_hpof6")
+cooking_recipies = Array[ExtResource("2_n6nke")]([SubResource("Resource_0jagj"), SubResource("Resource_52203"), SubResource("Resource_7ngdb"), SubResource("Resource_s7gri"), SubResource("Resource_rfelk"), SubResource("Resource_lbu5h"), SubResource("Resource_cvos4"), SubResource("Resource_mhmok")])
+burning_recipies = Array[ExtResource("2_n6nke")]([SubResource("Resource_rh7kd"), SubResource("Resource_jqnkg"), SubResource("Resource_qkak6"), SubResource("Resource_66qrl"), SubResource("Resource_m05oi"), SubResource("Resource_dnwec"), SubResource("Resource_aslym"), SubResource("Resource_jmbki")])
+interactable_name = "INTERACTABLE_FRYINGPAN"
+interaction_verb = "INTERACT_GENERIC"
+metadata/_custom_type_script = "uid://d0mgmoittkwg7"
+
+[node name="BaseSprite" type="AnimatedSprite2D" parent="." unique_id=425858686]
+texture_filter = 1
+position = Vector2(0, -2.7999992)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_73bvb")
+autoplay = "default"
+
+[node name="HeldItemsVisual" parent="." unique_id=1954037336 instance=ExtResource("8_0jagj")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(0, -12)
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=36253158]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -10.799999)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_ygt4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000159536]
+shape = SubResource("RectangleShape2D_40xn7")
+
+[node name="ItemHolder" type="Node" parent="." unique_id=1054772638]
+unique_name_in_owner = true
+script = ExtResource("5_ygt4w")
+
+[node name="Control" type="Control" parent="." unique_id=1878217880]
+z_index = 999
+layout_mode = 3
+anchors_preset = 0
+offset_left = -20.0
+offset_top = -28.0
+offset_right = 20.0
+offset_bottom = 12.0
+
+[node name="AudioAlert" type="AudioStreamPlayer2D" parent="Control" unique_id=1307994825]
+unique_name_in_owner = true
+position = Vector2(20, 28)
+stream = ExtResource("36_doxwc")
+bus = &"SFX"
+parameters/looping = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=960355666]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 4.0
+value = 50.0
+nine_patch_stretch = true
+texture_progress = ExtResource("6_mnqtw")
+tint_progress = Color(1, 1, 0.25882354, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control" unique_id=1193453896]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_3ah7k")
+
+[node name="PickUpAudio" type="AudioStreamPlayer" parent="." unique_id=157171221]
+stream = ExtResource("33_x6ghi")
+volume_db = -4.0
+
+[node name="PutDownAudio" type="AudioStreamPlayer" parent="." unique_id=1291386179]
+stream = ExtResource("34_dyefl")
+volume_db = -4.0
+
+[node name="GrillSizzling" type="AudioStreamPlayer2D" parent="." unique_id=1929393893]
+stream = ExtResource("35_dyefl")
+bus = &"SFX"
+parameters/looping = true

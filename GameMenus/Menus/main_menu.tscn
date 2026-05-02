@@ -1,26 +1,51 @@
 [gd_scene format=3 uid="uid://c8fdfo73hh5os"]
 
 [ext_resource type="Script" uid="uid://dlqeh56rupfxq" path="res://GameMenus/Menus/main_menu.gd" id="1_jf8mj"]
+[ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="1_ok0qi"]
 [ext_resource type="PackedScene" uid="uid://7xxc4n056xju" path="res://GameMenus/Menus/game_options.tscn" id="2_jvm6x"]
+[ext_resource type="Texture2D" uid="uid://65d6itykxrwm" path="res://Assets/logo_en.png" id="2_l3ajg"]
+[ext_resource type="Texture2D" uid="uid://ciss3i6lwyjxe" path="res://Assets/main_menu_bg.png" id="3_ajvor"]
+[ext_resource type="AudioStream" uid="uid://d31muncggi7b6" path="res://Assets/Audio/TheBrat.wav" id="6_11akl"]
 
-[node name="MainMenu" type="Control" unique_id=1746652833]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=2114774017]
+
+[node name="MainMenu" type="Control" parent="." unique_id=1746652833]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ok0qi")
 script = ExtResource("1_jf8mj")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1299194384]
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=1299194384]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_ajvor")
+expand_mode = 3
+stretch_mode = 6
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1825408174]
+[node name="TextureRect2" type="TextureRect" parent="MainMenu" unique_id=110654940]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -569.0
+offset_right = 2.0
+offset_bottom = 292.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("2_l3ajg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu" unique_id=1825408174]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -34,47 +59,41 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=359354159]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer" unique_id=359354159]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1319496043]
+[node name="StartGameButton" type="Button" parent="MainMenu/MarginContainer/VBoxContainer" unique_id=1319496043]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
-text = "Start
-"
+theme_override_font_sizes/font_size = 35
+text = "MAIN_MENU_START_BUTTON"
 
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=269744516]
+[node name="OptionsButton" type="Button" parent="MainMenu/MarginContainer/VBoxContainer" unique_id=269744516]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
-text = "Options
-"
+theme_override_font_sizes/font_size = 35
+text = "MAIN_MENU_OPTIONS_BUTTON"
 
-[node name="QuitGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1862367235]
+[node name="QuitGameButton" type="Button" parent="MainMenu/MarginContainer/VBoxContainer" unique_id=1862367235]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 50)
 layout_mode = 2
-text = "Quit"
+theme_override_font_sizes/font_size = 35
+text = "MAIN_MENU_QUIT_BUTTON"
 
-[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1342585227]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -555.0
-offset_bottom = 71.0
-grow_horizontal = 0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
-
-[node name="GameTitleLabel" type="Label" parent="MarginContainer2" unique_id=1537150754]
-layout_mode = 2
-theme_override_font_sizes/font_size = 50
-text = "Game Title"
-horizontal_alignment = 2
-
-[node name="GameOptions" parent="." unique_id=1171976347 instance=ExtResource("2_jvm6x")]
+[node name="GameOptions" parent="MainMenu" unique_id=1171976347 instance=ExtResource("2_jvm6x")]
+visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitGameButton" to="." method="_on_quit_game_button_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1255941212]
+stream = ExtResource("6_11akl")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/StartGameButton" to="MainMenu" method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/OptionsButton" to="MainMenu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/QuitGameButton" to="MainMenu" method="_on_quit_game_button_pressed"]

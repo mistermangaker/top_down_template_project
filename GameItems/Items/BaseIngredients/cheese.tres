@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dog2i6ckbl8ej"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_1jwyf"]
+[ext_resource type="Texture2D" uid="uid://dfs141jkwv3tm" path="res://Assets/Cheese.png" id="2_5slvl"]
+
+[resource]
+script = ExtResource("1_1jwyf")
+texture = ExtResource("2_5slvl")
+display_name = "CHEESE"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

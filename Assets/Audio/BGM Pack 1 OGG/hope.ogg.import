@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cisa031ko00ti"
+path="res://.godot/imported/hope.ogg-b6bbef2166adf9bcb0b8a9fdfec838af.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/BGM Pack 1 OGG/hope.ogg"
+dest_files=["res://.godot/imported/hope.ogg-b6bbef2166adf9bcb0b8a9fdfec838af.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

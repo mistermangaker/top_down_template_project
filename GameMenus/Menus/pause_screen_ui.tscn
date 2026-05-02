@@ -29,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -82.0
-offset_right = 62.0
-offset_bottom = 79.0
+offset_left = -128.0
+offset_top = -154.0
+offset_right = 120.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -49,24 +49,27 @@ theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2109574376]
 layout_mode = 2
-text = "Paused"
+theme_override_font_sizes/font_size = 32
+text = "UI_PAUSED"
 horizontal_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1341610270]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Continue"
+theme_override_font_sizes/font_size = 32
+text = "UI_CONTINUE"
 
 [node name="OptionsButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1341057516]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Options
-"
+theme_override_font_sizes/font_size = 32
+text = "UI_OPTIONS"
 
 [node name="QuitButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1257381531]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Main Menu"
+theme_override_font_sizes/font_size = 32
+text = "UI_MAIN_MENU"
 
 [node name="Panel" type="Panel" parent="." unique_id=286563040]
 custom_minimum_size = Vector2(0, 40)

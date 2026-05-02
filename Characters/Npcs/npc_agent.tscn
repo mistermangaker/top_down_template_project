@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://8kb2v6pyd56e"]
+
+[ext_resource type="Script" uid="uid://cfobyexsol3w2" path="res://Characters/PlayerCharacter/npc_agent.gd" id="1_w6hb6"]
+[ext_resource type="Script" uid="uid://c6pkgyscn4ipw" path="res://Characters/StateMachine/NpcStates/npc_state_machine.gd" id="2_0fe5n"]
+[ext_resource type="Script" uid="uid://eu872ydp6lq5" path="res://Characters/StateMachine/hierachical_state_node.gd" id="3_0fe5n"]
+[ext_resource type="Script" uid="uid://b6ftwemkc8agb" path="res://Characters/StateMachine/NpcStates/post_spawn_in.gd" id="3_qci7a"]
+[ext_resource type="Script" uid="uid://dvsqqf57incp4" path="res://GameItems/Scripts/item_holder.gd" id="3_y2bad"]
+[ext_resource type="Script" uid="uid://l7y3m6fwpl1h" path="res://Characters/StateMachine/NpcStates/move_to_location.gd" id="4_0fe5n"]
+[ext_resource type="PackedScene" uid="uid://drjcv1wxv3g36" path="res://Characters/AgentVisuals/entity_visuals.tscn" id="4_htnd5"]
+[ext_resource type="Script" uid="uid://dqxct0p26rxjk" path="res://Characters/StateMachine/NpcStates/wait_at_counter.gd" id="5_2ve5v"]
+[ext_resource type="PackedScene" uid="uid://dvpncp5cnu52q" path="res://GameItems/Scripts/held_items_visual.tscn" id="5_qci7a"]
+[ext_resource type="Script" uid="uid://bki31dmh34836" path="res://Characters/StateMachine/NpcStates/pre_delete.gd" id="6_21bda"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6hb6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0fe5n"]
+radius = 4.0
+
+[node name="NPC" type="CharacterBody2D" unique_id=1803841495 node_paths=PackedStringArray("navigation_agent_2d", "agent_visuals")]
+collision_layer = 4
+motion_mode = 1
+wall_min_slide_angle = 0.87266463
+script = ExtResource("1_w6hb6")
+navigation_agent_2d = NodePath("NavigationAgent2D")
+agent_visuals = NodePath("AgentVisuals")
+entity_move_speed = 80.0
+metadata/_custom_type_script = "uid://dteul4b8cnrwg"
+
+[node name="ItemHolder" type="Node" parent="." unique_id=636201377]
+script = ExtResource("3_y2bad")
+
+[node name="AgentVisuals" parent="." unique_id=2116964683 instance=ExtResource("4_htnd5")]
+position = Vector2(0, -8)
+
+[node name="HeldItemsVisual" parent="." unique_id=1954037336 instance=ExtResource("5_qci7a")]
+z_index = 1
+position = Vector2(0, -21)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=2114349148]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+path_max_distance = 10.0
+path_postprocessing = 1
+
+[node name="Emotes" type="AnimatedSprite2D" parent="." unique_id=179900489]
+sprite_frames = SubResource("SpriteFrames_w6hb6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=630192263]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_0fe5n")
+
+[node name="StateMachine" type="Node" parent="." unique_id=528571281 node_paths=PackedStringArray("initial_state_node")]
+process_mode = 4
+script = ExtResource("2_0fe5n")
+initial_state_node = NodePath("disabled")
+
+[node name="enabled" type="Node" parent="StateMachine" unique_id=578151619 node_paths=PackedStringArray("default")]
+script = ExtResource("3_0fe5n")
+default = NodePath("idle")
+
+[node name="move_to_location" type="Node" parent="StateMachine/enabled" unique_id=346674736]
+script = ExtResource("4_0fe5n")
+
+[node name="idle" type="Node" parent="StateMachine/enabled" unique_id=993443664]
+script = ExtResource("5_2ve5v")
+
+[node name="disabled" type="Node" parent="StateMachine" unique_id=956555216 node_paths=PackedStringArray("default")]
+script = ExtResource("3_0fe5n")
+default = NodePath("post_spawn_in")
+
+[node name="post_spawn_in" type="Node" parent="StateMachine/disabled" unique_id=1266006737]
+script = ExtResource("3_qci7a")
+
+[node name="pre_delete" type="Node" parent="StateMachine/disabled" unique_id=2137553022]
+script = ExtResource("6_21bda")

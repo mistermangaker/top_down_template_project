@@ -43,4 +43,8 @@ static func unpause_game()->void:
 	set_pause(false)
 
 static func quit_to_main_menu()->void:
-	pass
+	
+	var scene = ResourceLoader.load("res://GameMenus/Menus/main_menu.tscn") as PackedScene
+	
+	Engine.get_main_loop().change_scene_to_packed(scene)
+	Engine.get_main_loop().paused = false

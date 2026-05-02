@@ -10,7 +10,7 @@ carry_sprite = NodePath("Sprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1621311481]
 sprite_frames = ExtResource("2_cdxwv")
-animation = &"idle_south"
+animation = &"carrywalking_north"
 autoplay = "idle_south"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=724638326]

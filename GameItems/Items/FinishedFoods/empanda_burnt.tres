@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dhw8sch1c32pn"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_iq8tc"]
+[ext_resource type="Texture2D" uid="uid://bw263adm1sh5u" path="res://Assets/Sprites/ItemSprites/Empanadas burnt.png" id="2_uv0oq"]
+
+[resource]
+script = ExtResource("1_iq8tc")
+texture = ExtResource("2_uv0oq")
+display_name = "BURNT_EMPANDA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

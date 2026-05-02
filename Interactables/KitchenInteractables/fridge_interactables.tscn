@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bvjdoj4tepnyo"]
+
+[ext_resource type="Script" uid="uid://scvlbyix65wa" path="res://Interactables/KitchenInteractables/fridge_interactable.gd" id="1_685t6"]
+[ext_resource type="PackedScene" uid="uid://b7f35okeobahr" path="res://Interactables/InteractableObjectUI/fridge_closable_ui.tscn" id="2_mbfjp"]
+[ext_resource type="Texture2D" uid="uid://cfgx44tsbyr2y" path="res://Assets/Sprites/Terrain/Singles/fidge_closed.png" id="2_x7a27"]
+[ext_resource type="AudioStream" uid="uid://dsmvq7d76b1tf" path="res://Assets/Audio/Randomizers/ui_open_generic_audio_stream.tres" id="3_yqn75"]
+[ext_resource type="AudioStream" uid="uid://dnaji5pgntxyd" path="res://Assets/Audio/Randomizers/ui_close_generic_audio_stream.tres" id="4_tq3wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+size = Vector2(27, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_685t6"]
+radius = 31.016125
+
+[node name="FridgeInteractable" type="StaticBody2D" unique_id=1732990632]
+script = ExtResource("1_685t6")
+menu_scene = ExtResource("2_mbfjp")
+on_open_audio_stream = ExtResource("3_yqn75")
+on_close_audio_Stream = ExtResource("4_tq3wh")
+interactable_name = "INTERACTABLE_FRIDGE"
+interaction_verb = "INTERACT_OPEN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210414949]
+position = Vector2(0, -14)
+texture = ExtResource("2_x7a27")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=583756680]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=25638422]
+shape = SubResource("CircleShape2D_685t6")
+
+[node name="PopupOpenAudio" type="AudioStreamPlayer2D" parent="." unique_id=2122803459]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="PopupCloseAudio" type="AudioStreamPlayer2D" parent="." unique_id=1728055087]
+unique_name_in_owner = true
+bus = &"SFX"

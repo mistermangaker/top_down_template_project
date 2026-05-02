@@ -184,7 +184,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rs3ep")
 }],
 "loop": true,
-"name": &"carrywalk_east",
+"name": &"carrywalking_east",
 "speed": 5.0
 }, {
 "frames": [{
@@ -195,7 +195,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5xklg")
 }],
 "loop": true,
-"name": &"carrywalk_north",
+"name": &"carrywalking_north",
 "speed": 5.0
 }, {
 "frames": [{
@@ -206,7 +206,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5accp")
 }],
 "loop": true,
-"name": &"carrywalk_south",
+"name": &"carrywalking_south",
 "speed": 5.0
 }, {
 "frames": [{
@@ -217,7 +217,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ceobw")
 }],
 "loop": true,
-"name": &"carrywalk_west",
+"name": &"carrywalking_west",
 "speed": 5.0
 }, {
 "frames": [{

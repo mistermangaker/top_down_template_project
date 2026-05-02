@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bpqos5s5fxunl"]
+
+[ext_resource type="Script" uid="uid://cc6t4bp4d3hra" path="res://Interactables/InteractableObjectUI/failed_order_part_ui.gd" id="1_noiah"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oi46c"]
+size = Vector2(16, 16)
+
+[node name="FailedOrderPart" type="HBoxContainer" unique_id=1917854654 node_paths=PackedStringArray("texture_rect", "label")]
+script = ExtResource("1_noiah")
+texture_rect = NodePath("TextureRect")
+label = NodePath("Label")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2006306982]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_oi46c")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="." unique_id=802659710]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 10
+text = "placeholder"

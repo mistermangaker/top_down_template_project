@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dvpncp5cnu52q"]
+
+[ext_resource type="Script" uid="uid://cbepoo05m54xa" path="res://GameItems/Scripts/held_items_visual.gd" id="1_3a2o4"]
+
+[node name="HeldItemsVisual" type="Node2D" unique_id=1954037336]
+script = ExtResource("1_3a2o4")

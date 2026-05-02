@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://b4nrvy7qewika"]
+
+[ext_resource type="Script" uid="uid://c6g2ps863ld6s" path="res://Levels/day_end_scene.gd" id="1_dgcjp"]
+[ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="2_0iora"]
+[ext_resource type="Texture2D" uid="uid://drt28kr0li450" path="res://Assets/Sprites/day_end_screen.png" id="3_pb5kc"]
+[ext_resource type="AudioStream" uid="uid://c3ofkry53xjjc" path="res://Assets/Audio/DogFight.wav" id="4_178p0"]
+[ext_resource type="AudioStream" uid="uid://dmdj51avlb2te" path="res://Assets/Audio/Alone.wav" id="5_82gk4"]
+
+[sub_resource type="Animation" id="Animation_0iora"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%DayLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-142, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_pb5kc"]
+resource_name = "bounce"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%DayLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.07, 1.5666667, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-142, -100), Vector2(-142, -100), Vector2(-142, -68), Vector2(-142, -68), Vector2(-142, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68p2u"]
+_data = {
+&"RESET": SubResource("Animation_0iora"),
+&"bounce": SubResource("Animation_pb5kc")
+}
+
+[node name="DayEndScene" type="CanvasLayer" unique_id=936278993]
+layer = 8
+script = ExtResource("1_dgcjp")
+
+[node name="Control" type="Control" parent="." unique_id=1437823256]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0iora")
+
+[node name="BG" type="TextureRect" parent="Control" unique_id=152235181]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pb5kc")
+expand_mode = 3
+
+[node name="Control" type="Control" parent="Control" unique_id=2077672679]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DayLabel" type="Label" parent="Control/Control" unique_id=816833106]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -142.0
+offset_top = -100.0
+offset_right = 142.0
+offset_bottom = -54.166668
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "day number 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Control" unique_id=806227112]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -27.5
+offset_right = 176.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OrdersCompletedLabel" type="Label" parent="Control/Control/VBoxContainer" unique_id=2115170048]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 50
+text = "orders compledted: 0/8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/VBoxContainer" unique_id=1778981160]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_right = 80
+
+[node name="NextDayButton" type="Button" parent="Control/Control/VBoxContainer/MarginContainer" unique_id=720877604]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 45
+text = "Continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control" unique_id=1077518591]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_68p2u")
+autoplay = &"bounce"
+
+[node name="HappyMusic" type="AudioStreamPlayer" parent="." unique_id=1812588629]
+stream = ExtResource("4_178p0")
+
+[node name="UnHappyMusic" type="AudioStreamPlayer" parent="." unique_id=1320057680]
+stream = ExtResource("5_82gk4")
+
+[connection signal="pressed" from="Control/Control/VBoxContainer/MarginContainer/NextDayButton" to="." method="_on_next_day_button_pressed"]

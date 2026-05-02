@@ -61,6 +61,7 @@ func tranisition_to(state_name:String)->void:
 	if state_name.contains("*/"):
 		transition.emit(state_name.substr(state_name.findn("*/")+2))
 		return
+	
 	var node:StateNode = find_child(state_name)
 	if node:
 		set_state(node)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://jrj1a3kmmhrr"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_mh40g"]
+[ext_resource type="Texture2D" uid="uid://cmaffux6266i4" path="res://Assets/Sprites/ItemSprites/tomato.png" id="2_7c26x"]
+
+[resource]
+script = ExtResource("1_mh40g")
+texture = ExtResource("2_7c26x")
+display_name = "TOMATO"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

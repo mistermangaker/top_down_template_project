@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dt81k5yebawp2"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_hg04g"]
+[ext_resource type="Texture2D" uid="uid://bea11aj6opyx8" path="res://Assets/Sprites/ItemSprites/Drinks/soda_1.png" id="2_gcxxk"]
+
+[resource]
+script = ExtResource("1_hg04g")
+texture = ExtResource("2_gcxxk")
+display_name = "SODALEMON"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

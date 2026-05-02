@@ -1,0 +1,108 @@
+[gd_scene format=4 uid="uid://cendkbj3a1dsa"]
+
+[ext_resource type="PackedScene" uid="uid://7q8vebrbubhv" path="res://Characters/PlayerCharacter/player.tscn" id="1_3x0gg"]
+[ext_resource type="Script" uid="uid://ck5w36vb53mrx" path="res://GameScene/LevelSystem/game_level.gd" id="1_gc0f4"]
+[ext_resource type="PackedScene" uid="uid://c8v7jvsygj7cq" path="res://Interactables/KitchenInteractables/item_shelf_interactable.tscn" id="2_ldqed"]
+[ext_resource type="TileSet" uid="uid://cl1x058wills0" path="res://Assets/Sprites/Terrain/floors_tile_map.tres" id="4_2d5o6"]
+[ext_resource type="PackedScene" uid="uid://bvjdoj4tepnyo" path="res://Interactables/KitchenInteractables/fridge_interactables.tscn" id="5_1scti"]
+[ext_resource type="TileSet" uid="uid://bdqmkwogiparp" path="res://Assets/Sprites/Terrain/walls_tile_map.tres" id="5_kwfj2"]
+[ext_resource type="PackedScene" uid="uid://b7f35okeobahr" path="res://Interactables/InteractableObjectUI/fridge_closable_ui.tscn" id="6_agyc2"]
+[ext_resource type="PackedScene" uid="uid://bkq2m2nhg0wej" path="res://Interactables/KitchenInteractables/grill_interactable.tscn" id="7_47v2c"]
+[ext_resource type="PackedScene" uid="uid://cha5sh8eh6yeh" path="res://Interactables/KitchenInteractables/trash_interactable.tscn" id="7_agyc2"]
+[ext_resource type="PackedScene" uid="uid://b6uoaxbwanl0d" path="res://Interactables/KitchenInteractables/plate_holder_interactable.tscn" id="8_47v2c"]
+[ext_resource type="PackedScene" uid="uid://di0fhyfb03m4l" path="res://Interactables/KitchenInteractables/food_prep_table_interactable.tscn" id="11_ga4lq"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/crafting_recipe.gd" id="12_u5cuy"]
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/item_data.gd" id="13_quc3o"]
+[ext_resource type="Resource" uid="uid://c3e0a3ar24wr7" path="res://GameItems/Items/cooked_meat.tres" id="14_2d5o6"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/cheese.tres" id="15_kwfj2"]
+[ext_resource type="Script" uid="uid://rh55kobeix2q" path="res://Levels/game_manager.gd" id="16_820rd"]
+[ext_resource type="Resource" uid="uid://uve7udaeqcr6" path="res://GameItems/Items/raw_meat.tres" id="16_ppbbd"]
+[ext_resource type="Resource" uid="uid://c751l7xhp7kw6" path="res://GameItems/Items/burnt_meat.tres" id="17_iwx70"]
+[ext_resource type="PackedScene" uid="uid://cbpesuc156un4" path="res://Interactables/KitchenInteractables/order_counter_interactable.tscn" id="17_u5cuy"]
+[ext_resource type="Script" uid="uid://cgsw66eauin01" path="res://GameItems/customer_order.gd" id="18_quc3o"]
+[ext_resource type="Script" uid="uid://bacwu88po3e5o" path="res://Levels/npc_manager.gd" id="21_kwfj2"]
+
+[sub_resource type="Resource" id="Resource_nmfig"]
+script = ExtResource("12_u5cuy")
+required_items = Dictionary[ExtResource("13_quc3o"), int]({
+ExtResource("16_ppbbd"): 1,
+ExtResource("17_iwx70"): 1
+})
+forbidden_items = Array[ExtResource("13_quc3o")]([ExtResource("14_2d5o6")])
+output_item = ExtResource("15_kwfj2")
+metadata/_custom_type_script = "uid://ca3qt2exyeowq"
+
+[sub_resource type="Resource" id="Resource_2d5o6"]
+script = ExtResource("18_quc3o")
+required_items = Dictionary[ExtResource("13_quc3o"), int]({
+ExtResource("17_iwx70"): 1
+})
+metadata/_custom_type_script = "uid://cgsw66eauin01"
+
+[node name="MainGameScene" type="Node2D" unique_id=278454360 node_paths=PackedStringArray("player")]
+y_sort_enabled = true
+script = ExtResource("1_gc0f4")
+player = NodePath("Player")
+
+[node name="OrdersManager" type="Node" parent="." unique_id=1095213619]
+script = ExtResource("16_820rd")
+
+[node name="Player" parent="." unique_id=2074472804 instance=ExtResource("1_3x0gg")]
+position = Vector2(136, 111)
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=961594289]
+zoom = Vector2(3, 3)
+limit_left = 5
+limit_top = 10
+limit_right = 500
+limit_bottom = 300
+
+[node name="FloorTileMap" type="TileMapLayer" parent="." unique_id=88367938]
+tile_map_data = PackedByteArray("AAAFAAMAAAANAAMAAAAFAAQAAAANAAMAAAAFAAUAAAANAAMAAAAFAAYAAAANAAMAAAAFAAcAAAANAAMAAAAFAAgAAAANAAMAAAAFAAkAAAANAAMAAAAFAAoAAAANAAMAAAAFAAsAAAANAAMAAAAGAAMAAAANAAMAAAAGAAQAAAANAAMAAAAGAAUAAAANAAMAAAAGAAYAAAANAAMAAAAGAAcAAAANAAMAAAAGAAgAAAANAAMAAAAGAAkAAAANAAMAAAAGAAoAAAANAAMAAAAGAAsAAAANAAMAAAAHAAMAAAANAAMAAAAHAAQAAAANAAMAAAAHAAUAAAANAAMAAAAHAAYAAAANAAMAAAAHAAcAAAANAAMAAAAHAAgAAAANAAMAAAAHAAkAAAANAAMAAAAHAAoAAAANAAMAAAAHAAsAAAANAAMAAAAIAAMAAAANAAMAAAAIAAQAAAANAAMAAAAIAAUAAAANAAMAAAAIAAYAAAANAAMAAAAIAAcAAAANAAMAAAAIAAgAAAANAAMAAAAIAAkAAAANAAMAAAAIAAoAAAANAAMAAAAIAAsAAAANAAMAAAAJAAMAAAANAAMAAAAJAAQAAAANAAMAAAAJAAUAAAANAAMAAAAJAAYAAAANAAMAAAAJAAcAAAANAAMAAAAJAAgAAAANAAMAAAAJAAkAAAANAAMAAAAJAAoAAAANAAMAAAAJAAsAAAANAAMAAAAKAAMAAAANAAMAAAAKAAQAAAANAAMAAAAKAAUAAAANAAMAAAAKAAYAAAANAAMAAAAKAAcAAAANAAMAAAAKAAgAAAANAAMAAAAKAAkAAAANAAMAAAAKAAoAAAANAAMAAAAKAAsAAAANAAMAAAALAAMAAAANAAMAAAALAAQAAAANAAMAAAALAAUAAAANAAMAAAALAAYAAAANAAMAAAALAAcAAAANAAMAAAALAAgAAAANAAMAAAALAAkAAAANAAMAAAALAAoAAAANAAMAAAALAAsAAAANAAMAAAAMAAMAAAANAAMAAAAMAAQAAAANAAMAAAAMAAUAAAANAAMAAAAMAAYAAAANAAMAAAAMAAcAAAANAAMAAAAMAAgAAAANAAMAAAAMAAkAAAANAAMAAAAMAAoAAAANAAMAAAAMAAsAAAANAAMAAAANAAMAAAANAAMAAAANAAQAAAANAAMAAAANAAUAAAANAAMAAAANAAYAAAANAAMAAAANAAcAAAANAAMAAAANAAgAAAANAAMAAAANAAkAAAANAAMAAAANAAoAAAANAAMAAAANAAsAAAANAAMAAAAOAAMAAAANAAMAAAAOAAQAAAANAAMAAAAOAAUAAAANAAMAAAAOAAYAAAANAAMAAAAOAAcAAAANAAMAAAAOAAgAAAANAAMAAAAOAAkAAAANAAMAAAAOAAoAAAANAAMAAAAOAAsAAAANAAMAAAAPAAMAAAANAAMAAAAPAAQAAAANAAMAAAAPAAUAAAANAAMAAAAPAAYAAAANAAMAAAAPAAcAAAANAAMAAAAPAAgAAAANAAMAAAAPAAkAAAANAAMAAAAPAAoAAAANAAMAAAAPAAsAAAANAAMAAAAQAAMAAAANAAMAAAAQAAQAAAANAAMAAAAQAAUAAAANAAMAAAAQAAYAAAANAAMAAAAQAAcAAAANAAMAAAAQAAgAAAANAAMAAAAQAAkAAAANAAMAAAAQAAoAAAANAAMAAAAQAAsAAAANAAMAAAARAAMAAAANAAMAAAARAAQAAAANAAMAAAARAAUAAAANAAMAAAARAAYAAAANAAMAAAARAAcAAAANAAMAAAARAAgAAAANAAMAAAARAAkAAAANAAMAAAARAAoAAAANAAMAAAARAAsAAAANAAMAAAASAAMAAAANAAMAAAASAAQAAAANAAMAAAASAAUAAAANAAMAAAASAAYAAAANAAMAAAASAAcAAAANAAMAAAASAAgAAAANAAMAAAASAAkAAAANAAMAAAASAAoAAAANAAMAAAASAAsAAAANAAMAAAATAAMAAAANAAMAAAATAAQAAAANAAMAAAATAAUAAAANAAMAAAATAAYAAAANAAMAAAATAAcAAAANAAMAAAATAAgAAAANAAMAAAATAAkAAAANAAMAAAATAAoAAAANAAMAAAATAAsAAAANAAMAAAAUAAMAAAANAAMAAAAUAAQAAAANAAMAAAAUAAUAAAANAAMAAAAUAAYAAAANAAMAAAAUAAcAAAANAAMAAAAUAAgAAAANAAMAAAAUAAkAAAANAAMAAAAUAAoAAAANAAMAAAAUAAsAAAANAAMAAAAVAAMAAAANAAMAAAAVAAQAAAANAAMAAAAVAAUAAAANAAMAAAAVAAYAAAANAAMAAAAVAAcAAAANAAMAAAAVAAgAAAANAAMAAAAVAAkAAAANAAMAAAAVAAoAAAANAAMAAAAVAAsAAAANAAMAAAAWAAMAAAANAAMAAAAWAAQAAAANAAMAAAAWAAUAAAANAAMAAAAWAAYAAAANAAMAAAAWAAcAAAANAAMAAAAWAAgAAAANAAMAAAAWAAkAAAANAAMAAAAWAAoAAAANAAMAAAAWAAsAAAANAAMAAAAXAAMAAAANAAMAAAAXAAQAAAANAAMAAAAXAAUAAAANAAMAAAAXAAYAAAANAAMAAAAXAAcAAAANAAMAAAAXAAgAAAANAAMAAAAXAAkAAAANAAMAAAAXAAoAAAANAAMAAAAXAAsAAAANAAMAAAAYAAMAAAANAAMAAAAYAAQAAAANAAMAAAAYAAUAAAANAAMAAAAYAAYAAAANAAMAAAAYAAcAAAANAAMAAAAYAAgAAAANAAMAAAAYAAkAAAANAAMAAAAYAAoAAAANAAMAAAAYAAsAAAANAAMAAAAZAAMAAAANAAMAAAAZAAQAAAANAAMAAAAZAAUAAAANAAMAAAAZAAYAAAANAAMAAAAZAAcAAAANAAMAAAAZAAgAAAANAAMAAAAZAAkAAAANAAMAAAAZAAoAAAANAAMAAAAZAAsAAAANAAMAAAA=")
+tile_set = ExtResource("4_2d5o6")
+
+[node name="WallTileMap" type="TileMapLayer" parent="." unique_id=1492320050]
+tile_map_data = PackedByteArray("AAAHAAMAAAABAAMAAAAIAAMAAAABAAMAAAAJAAMAAAABAAMAAAAKAAMAAAABAAMAAAALAAMAAAABAAMAAAAMAAMAAAABAAMAAAANAAMAAAABAAMAAAAOAAMAAAABAAMAAAAPAAMAAAABAAMAAAAQAAMAAAABAAMAAAARAAMAAAABAAMAAAASAAMAAAABAAMAAAATAAMAAAABAAMAAAAUAAMAAAABAAMAAAAVAAMAAAABAAMAAAAWAAMAAAABAAMAAAAXAAMAAAABAAMAAAAYAAMAAAABAAMAAAAZAAMAAAABAAMAAAAaAAMAAAAFAAUAAAAaAAEAAAAFAAUAAAAaAAIAAAAFAAUAAAAaAAQAAAAFAAUAAAAaAAUAAAAFAAUAAAAaAAYAAAAFAAUAAAAaAAcAAAAFAAUAAAAaAAgAAAAFAAUAAAAaAAkAAAAFAAUAAAAPAAoAAQABAAMAAAAQAAoAAQABAAMAAAARAAoAAQABAAMAAAASAAoAAQABAAMAAAATAAoAAQABAAMAAAAUAAoAAQABAAMAAAAVAAoAAQABAAMAAAAWAAoAAQABAAMAAAAXAAoAAQABAAMAAAAYAAoAAQABAAMAAAAZAAoAAQABAAMAAAAaAAoAAQABAAMAAAAPAAsAAQABAAQAAAAPAAwAAQABAAUAAAAQAAsAAQABAAQAAAAQAAwAAQABAAUAAAARAAsAAQABAAQAAAARAAwAAQABAAUAAAASAAsAAQABAAQAAAASAAwAAQABAAUAAAATAAsAAQABAAQAAAATAAwAAQABAAUAAAAUAAsAAQABAAQAAAAUAAwAAQABAAUAAAAVAAsAAQABAAQAAAAVAAwAAQABAAUAAAAWAAsAAQABAAQAAAAWAAwAAQABAAUAAAAXAAsAAQABAAQAAAAXAAwAAQABAAUAAAAYAAsAAQABAAQAAAAYAAwAAQABAAUAAAAZAAsAAQABAAQAAAAZAAwAAQABAAUAAAAaAAsAAQABAAQAAAAaAAwAAQABAAUAAAAOAAoAAQAAAAMAAAAOAAsAAQAFAAUAAAAOAAwAAQAFAAUAAAAOAA0AAQAFAAUAAAAOAA4AAQACAAMAAAAOAA8AAQACAAQAAAAOABAAAQACAAUAAAANAA4AAQABAAMAAAANAA8AAQABAAQAAAANABAAAQABAAUAAAAMAA4AAQABAAMAAAAMAA8AAQABAAQAAAAMABAAAQABAAUAAAALAA4AAQABAAMAAAALAA8AAQABAAQAAAALABAAAQABAAUAAAAKAA4AAQABAAMAAAAKAA8AAQABAAQAAAAKABAAAQABAAUAAAAJAA4AAQABAAMAAAAJAA8AAQABAAQAAAAJABAAAQABAAUAAAAIAA4AAQABAAMAAAAIAA8AAQABAAQAAAAIABAAAQABAAUAAAAHAA4AAQABAAMAAAAHAA8AAQABAAQAAAAHABAAAQABAAUAAAAGAA4AAQABAAMAAAAGAA8AAQABAAQAAAAGABAAAQABAAUAAAAFAA4AAQABAAMAAAAFAA8AAQABAAQAAAAFABAAAQABAAUAAAAEAA4AAQAFAAUAAAAEAA8AAQAFAAUAAAAEABAAAQAFAAUAAAAEAA0AAQAFAAUAAAAEAAwAAQAFAAUAAAAEAAsAAQAFAAUAAAAEAAoAAQAFAAUAAAAEAAkAAQAFAAUAAAAEAAgAAQAFAAUAAAAEAAcAAQAFAAUAAAAEAAYAAQAFAAUAAAAEAAUAAQAFAAUAAAAEAAQAAQAFAAUAAAAEAAMAAQAFAAUAAAAEAAIAAQAFAAUAAAAEAAEAAQAFAAUAAAAGAAMAAAABAAMAAAAFAAMAAAABAAMAAAA=")
+tile_set = ExtResource("5_kwfj2")
+
+[node name="WallDecor" type="TileMapLayer" parent="." unique_id=1153022504]
+
+[node name="ItemShelf" parent="." unique_id=1917936089 instance=ExtResource("2_ldqed")]
+position = Vector2(211, 64)
+
+[node name="ItemShelf3" parent="." unique_id=1371800436 instance=ExtResource("2_ldqed")]
+position = Vector2(195, 64)
+
+[node name="ItemShelf4" parent="." unique_id=151047832 instance=ExtResource("2_ldqed")]
+position = Vector2(227, 64)
+
+[node name="FridgeInteractable" parent="." unique_id=1732990632 instance=ExtResource("5_1scti")]
+position = Vector2(309, 65)
+menu_scene = ExtResource("6_agyc2")
+
+[node name="TrashInteractable" parent="." unique_id=410735947 instance=ExtResource("7_agyc2")]
+position = Vector2(387, 113)
+
+[node name="GrillInteractable" parent="." unique_id=641524855 instance=ExtResource("7_47v2c")]
+position = Vector2(272, 63)
+
+[node name="ItemShelf2" parent="." unique_id=355070378 instance=ExtResource("8_47v2c")]
+position = Vector2(174, 63)
+
+[node name="FoodPrepInteractable" parent="." unique_id=2038398771 instance=ExtResource("11_ga4lq")]
+position = Vector2(246, 154)
+crafting_recipes = Array[ExtResource("12_u5cuy")]([SubResource("Resource_nmfig"), SubResource("Resource_nmfig"), SubResource("Resource_nmfig"), SubResource("Resource_nmfig"), SubResource("Resource_nmfig")])
+
+[node name="OrderCounterInteractable" parent="." unique_id=115883032 node_paths=PackedStringArray("order_manager") instance=ExtResource("17_u5cuy")]
+position = Vector2(180, 174)
+order_manager = NodePath("../OrdersManager")
+customer_order = SubResource("Resource_2d5o6")
+
+[node name="NPC_Manager" type="Node" parent="." unique_id=1659534908]
+script = ExtResource("21_kwfj2")
+
+[node name="SpawnLocation" type="Node2D" parent="NPC_Manager" unique_id=926073199]
+position = Vector2(528, 280)
+
+[node name="DespawnLocation" type="Node2D" parent="NPC_Manager" unique_id=2047712759]
+position = Vector2(5, 280)

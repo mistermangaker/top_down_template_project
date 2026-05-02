@@ -5,12 +5,17 @@ static var current:GameLevel
 
 @export var player:Player
 
-
+var game_is_running:bool
 
 var doors:Array[Door]
 static var data:LevelDataHandoff
 
 func _ready() -> void:
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+	if !player:
+		printerr("player not found")
+		return
 	player.visible = false
 	player.disable()
 	doors.clear()

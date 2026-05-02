@@ -1,0 +1,26 @@
+assets used:
+	pixel art:
+		background assets:
+		modern interiors/exteriors
+		https://limezu.itch.io/moderninteriors
+		
+		misc pixel art items:
+				Henry Software
+				https://henrysoftware.itch.io/pixel-food
+		
+		font:
+			datagoblin
+			https://datagoblin.itch.io/monogram
+			
+			Tinyworlds
+			https://tinyworlds.itch.io/free-pixel-font-thaleah
+		
+		audio:
+			misc audio assets:
+			JDSherbert
+			https://jdsherbert.itch.io/pixel-ui-sfx-pack
+			music:
+				Potat0Master
+				https://potat0master.itch.io/free-background-music-for-visual-novels-bgm-pack-1
+				tubelesshalo
+				https://tubelesshalo.itch.io/free-music-loop-pack

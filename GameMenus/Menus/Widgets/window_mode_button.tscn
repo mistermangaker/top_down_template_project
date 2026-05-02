@@ -7,4 +7,8 @@
 script = ExtResource("2_xhlae")
 
 [node name="OptionSettingLabel" parent="." index="0" unique_id=906897713]
+theme_override_font_sizes/font_size = 32
 text = "Window Mode"
+
+[node name="SettingsButton" parent="." index="2" unique_id=126634628]
+theme_override_font_sizes/font_size = 32

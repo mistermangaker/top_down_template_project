@@ -1,32 +1,55 @@
 [gd_scene format=3 uid="uid://7q8vebrbubhv"]
 
 [ext_resource type="Script" uid="uid://dyub3dp6q6ryk" path="res://Characters/PlayerCharacter/player_body.gd" id="1_ug0nu"]
+[ext_resource type="SpriteFrames" uid="uid://bows53ild625j" path="res://Characters/AgentVisuals/player_visuals.tres" id="2_dgbqj"]
 [ext_resource type="PackedScene" uid="uid://drjcv1wxv3g36" path="res://Characters/AgentVisuals/entity_visuals.tscn" id="2_njvj3"]
 [ext_resource type="Script" uid="uid://dll2nje6edn5n" path="res://Characters/PlayerCharacter/player_state_machine.gd" id="3_wvkug"]
 [ext_resource type="Script" uid="uid://bfs3cir5o11we" path="res://Characters/PlayerCharacter/normal_state.gd" id="4_gww8v"]
+[ext_resource type="PackedScene" uid="uid://dvpncp5cnu52q" path="res://GameItems/Scripts/held_items_visual.tscn" id="4_u53e1"]
 [ext_resource type="Script" uid="uid://dygvq10txwlxm" path="res://Characters/StateMachine/PlayerStates/movement_state.gd" id="5_u53e1"]
 [ext_resource type="Script" uid="uid://cno48mxxjydrm" path="res://Characters/StateMachine/PlayerStates/idle_state.gd" id="6_l8bmj"]
 [ext_resource type="Script" uid="uid://debscruulu24x" path="res://Characters/PlayerCharacter/pre_delete.gd" id="7_fhf5b"]
 [ext_resource type="Script" uid="uid://bu4p8xjfpen3r" path="res://Interactables/BaseScripts/interactable_detector.gd" id="8_dgbqj"]
+[ext_resource type="Script" uid="uid://dvsqqf57incp4" path="res://GameItems/Scripts/item_holder.gd" id="9_wvkug"]
+[ext_resource type="Script" uid="uid://ddnv0q76uit57" path="res://GameItems/Scripts/game_item.gd" id="10_gww8v"]
+[ext_resource type="AudioStream" uid="uid://dng4cn6c6r4cn" path="res://Assets/Audio/footsteps_1.ogg" id="13_dgbqj"]
+[ext_resource type="AudioStream" uid="uid://v34w6277okcy" path="res://Assets/Audio/FootSteps_2.ogg" id="14_u4owb"]
+[ext_resource type="AudioStream" uid="uid://djfa2imlmyu3m" path="res://Assets/Audio/FootSteps_3.ogg" id="15_dhqlj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_304s7"]
-radius = 8.0
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83qa3"]
 radius = 28.01785
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5v0xf"]
+streams_count = 3
+stream_0/stream = ExtResource("13_dgbqj")
+stream_1/stream = ExtResource("14_u4owb")
+stream_2/stream = ExtResource("15_dhqlj")
+
 [node name="Player" type="CharacterBody2D" unique_id=2074472804 node_paths=PackedStringArray("interactable_detector", "agent_visuals") groups=["player"]]
 y_sort_enabled = true
 texture_filter = 1
+collision_layer = 0
+collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_ug0nu")
 interactable_detector = NodePath("InteractableDetector")
+override_sprite_sheet = ExtResource("2_dgbqj")
 agent_visuals = NodePath("AgentVisuals")
 entity_move_speed = 150.0
 metadata/_custom_type_script = "uid://dyub3dp6q6ryk"
 
+[node name="ItemHolder" type="Node" parent="." unique_id=1059159865]
+script = ExtResource("9_wvkug")
+
 [node name="AgentVisuals" parent="." unique_id=2116964683 instance=ExtResource("2_njvj3")]
 position = Vector2(0, -8)
+
+[node name="HeldItemsVisual" parent="." unique_id=1954037336 instance=ExtResource("4_u53e1")]
+z_index = 1
+position = Vector2(0, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1905652931]
 position = Vector2(0, -3)
@@ -57,5 +80,10 @@ script = ExtResource("8_dgbqj")
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_83qa3")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1487647766]
-zoom = Vector2(2, 2)
+[node name="GameItem" type="Node" parent="." unique_id=42069605]
+script = ExtResource("10_gww8v")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=1319556972]
+stream = SubResource("AudioStreamRandomizer_5v0xf")
+volume_db = 14.0
+bus = &"SFX"

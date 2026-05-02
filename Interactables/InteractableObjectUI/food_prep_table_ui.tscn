@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://7kwn4v8rwjdr"]
+
+[ext_resource type="Script" uid="uid://3u03un8tswh4" path="res://Interactables/InteractableObjectUI/food_prep_table_ui.gd" id="1_5d0r3"]
+[ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="1_l47vh"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/Scripts/crafting_recipe.gd" id="3_ql0js"]
+[ext_resource type="PackedScene" uid="uid://cqnx4c51va4fx" path="res://Interactables/InteractableObjectUI/prep_table_item_button.tscn" id="3_ury2o"]
+[ext_resource type="Resource" uid="uid://bfwf7oubnj3mf" path="res://GameItems/FoodPrepTableRecipes/empanda.tres" id="4_10klg"]
+[ext_resource type="Resource" uid="uid://bys4o08cgaxl0" path="res://GameItems/FoodPrepTableRecipes/grilled_cheese.tres" id="5_2k6hw"]
+[ext_resource type="Resource" uid="uid://cfr8tnad6aqqq" path="res://GameItems/FoodPrepTableRecipes/milanesa_finished.tres" id="6_m1h2u"]
+[ext_resource type="Resource" uid="uid://qmg6fgdtuvwf" path="res://GameItems/FoodPrepTableRecipes/Milanesa_raw.tres" id="7_ome25"]
+[ext_resource type="Resource" uid="uid://de1nyuhx5tsuf" path="res://GameItems/FoodPrepTableRecipes/pizza_recipes.tres" id="8_uyqhl"]
+[ext_resource type="Resource" uid="uid://d4f0bhw1018mu" path="res://GameItems/FoodPrepTableRecipes/revueto_gramajo.tres" id="9_eyysf"]
+
+[node name="FoodPrepTableUI" type="Control" unique_id=640189023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l47vh")
+script = ExtResource("1_5d0r3")
+crafting_recipes = Array[ExtResource("3_ql0js")]([ExtResource("4_10klg"), ExtResource("5_2k6hw"), ExtResource("6_m1h2u"), ExtResource("7_ome25"), ExtResource("8_uyqhl"), ExtResource("9_eyysf")])
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1328034825]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = -155.0
+offset_right = 151.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=61678894]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=812045931]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1513517262]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1810976003]
+layout_mode = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=386457375]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/ButtonContainer" unique_id=664119742 instance=ExtResource("3_ury2o")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1643826164]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "UI_CLOSE"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

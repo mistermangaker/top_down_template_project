@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3 uid="uid://bfwf7oubnj3mf"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_sxq0f"]
+[ext_resource type="Resource" uid="uid://yf2ys8t05pls" path="res://GameItems/Items/FinishedFoods/empanda_raw.tres" id="2_dqstj"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/Scripts/crafting_recipe.gd" id="2_hkojn"]
+[ext_resource type="Resource" uid="uid://ckvlke2wiq3qh" path="res://GameItems/Items/BaseIngredients/dough.tres" id="3_wpl05"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="4_haist"]
+[ext_resource type="Resource" uid="uid://c3e0a3ar24wr7" path="res://GameItems/Items/BaseIngredients/meat_cooked.tres" id="5_wb0sy"]
+
+[resource]
+script = ExtResource("2_hkojn")
+required_items = Dictionary[ExtResource("1_sxq0f"), int]({
+ExtResource("3_wpl05"): 2,
+ExtResource("4_haist"): 1,
+ExtResource("5_wb0sy"): 1
+})
+output_item = ExtResource("2_dqstj")
+metadata/_custom_type_script = "uid://ca3qt2exyeowq"

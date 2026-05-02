@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d2xf3vvg173cd"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_auvoy"]
+[ext_resource type="Texture2D" uid="uid://bgklk3rf4k8dh" path="res://Assets/Sprites/ItemSprites/bread.png" id="2_auvoy"]
+
+[resource]
+script = ExtResource("1_auvoy")
+texture = ExtResource("2_auvoy")
+display_name = "BREAD"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

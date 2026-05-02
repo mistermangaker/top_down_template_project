@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dj0b733m5wnwp"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_uyjeb"]
+[ext_resource type="Texture2D" uid="uid://d3xoy3u7w1470" path="res://Assets/Sprites/ItemSprites/potato.png" id="2_tqhql"]
+
+[resource]
+script = ExtResource("1_uyjeb")
+texture = ExtResource("2_tqhql")
+display_name = "UNCOOKED_POTATO"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://br8ko3pxsqwu5"]
+
+[ext_resource type="PackedScene" uid="uid://8kb2v6pyd56e" path="res://Characters/Npcs/npc_agent.tscn" id="1_6hssq"]
+[ext_resource type="SpriteFrames" uid="uid://ccpejts6gp2bv" path="res://Characters/AgentVisuals/character_2.tres" id="2_d6gqw"]
+[ext_resource type="Script" uid="uid://b1uagdoafb0gi" path="res://GameItems/Scripts/base_order.gd" id="3_j5oex"]
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="4_xf6st"]
+[ext_resource type="Resource" uid="uid://cg67tfujak2of" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_cooked.tres" id="5_isgqn"]
+[ext_resource type="Resource" uid="uid://cpwfc7fpjj3j2" path="res://GameItems/Items/Drinks/soda_cherry.tres" id="6_7m75h"]
+[ext_resource type="Script" uid="uid://cgsw66eauin01" path="res://GameItems/Scripts/customer_order.gd" id="7_vjn5k"]
+
+[sub_resource type="Resource" id="Resource_jxj5n"]
+script = ExtResource("7_vjn5k")
+required_items = Dictionary[ExtResource("4_xf6st"), int]({
+ExtResource("5_isgqn"): 1,
+ExtResource("6_7m75h"): 1
+})
+metadata/_custom_type_script = "uid://cgsw66eauin01"
+
+[node name="NPC" unique_id=1803841495 instance=ExtResource("1_6hssq")]
+override_skin = ExtResource("2_d6gqw")
+possible_customer_orders = Dictionary[ExtResource("3_j5oex"), float]({
+SubResource("Resource_jxj5n"): 1.0
+})

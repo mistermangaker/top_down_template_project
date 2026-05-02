@@ -3,6 +3,8 @@ extends HBoxContainer
 @onready var percentage_slider: HSlider = %PercentageSlider
 @onready var percentage_label: Label = %PercentageLabel
 
+@export var display_name:String = ""
+
 @export_enum("Master","Music","SFX") var bus_name:String
 
 var bus_index:int = 0
@@ -16,7 +18,10 @@ func _ready() -> void:
 	
 
 func set_name_label_text()->void:
-	audio_setting_label.text = str(bus_name)+" Volume"
+	if display_name=="":
+		audio_setting_label.text = str(bus_name)+" Volume"
+	else:
+		audio_setting_label.text = display_name
 
 func set_audio_num_label_text()->void:
 	percentage_label.text = str(percentage_slider.value*100)+"%"

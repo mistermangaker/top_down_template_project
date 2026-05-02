@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cha5sh8eh6yeh"]
+
+[ext_resource type="Script" uid="uid://cil5n0oumh8uf" path="res://Interactables/KitchenInteractables/trash_interactable.gd" id="1_nnmk6"]
+[ext_resource type="Texture2D" uid="uid://cxi3cd131pvy6" path="res://Assets/Sprites/Terrain/trash_can.png" id="2_d4xxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7xtq"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3eyxn"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb03s"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajjww"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7qtw"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehivf"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufnnh"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8f0a"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spkrv"]
+atlas = ExtResource("2_d4xxd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67aqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7xtq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3eyxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb03s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajjww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7qtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehivf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufnnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8f0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spkrv")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}]
+
+[node name="TrashInteractable" type="StaticBody2D" unique_id=410735947]
+script = ExtResource("1_nnmk6")
+interactable_name = "ITERACTABLE_TRASHCAN"
+interaction_verb = "INTERACT_TRASH"
+metadata/_custom_type_script = "uid://d0mgmoittkwg7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=180122311]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_67aqu")
+animation = &"open"

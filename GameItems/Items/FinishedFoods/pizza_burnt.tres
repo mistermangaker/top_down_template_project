@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://kwptys2g81bk"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_knya3"]
+[ext_resource type="Texture2D" uid="uid://dq46wk2t73uk2" path="res://Assets/Sprites/ItemSprites/Pizza Crust Burnt.png" id="2_8a8v4"]
+
+[resource]
+script = ExtResource("1_knya3")
+texture = ExtResource("2_8a8v4")
+display_name = "BURNT_PIZZA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

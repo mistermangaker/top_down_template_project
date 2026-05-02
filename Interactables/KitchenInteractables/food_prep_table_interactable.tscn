@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://di0fhyfb03m4l"]
+
+[ext_resource type="Script" uid="uid://dxymseg76dd0a" path="res://Interactables/KitchenInteractables/food_prep_table_interactable.gd" id="1_umde3"]
+[ext_resource type="Texture2D" uid="uid://cqdt7q4xdtyf1" path="res://Assets/shelf.png" id="2_kx65u"]
+[ext_resource type="PackedScene" uid="uid://7kwn4v8rwjdr" path="res://Interactables/InteractableObjectUI/food_prep_table_ui.tscn" id="2_rwufh"]
+[ext_resource type="AudioStream" uid="uid://dsmvq7d76b1tf" path="res://Assets/Audio/Randomizers/ui_open_generic_audio_stream.tres" id="3_kx65u"]
+[ext_resource type="AudioStream" uid="uid://dnaji5pgntxyd" path="res://Assets/Audio/Randomizers/ui_close_generic_audio_stream.tres" id="4_rwufh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40xn7"]
+size = Vector2(43, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kx65u"]
+radius = 31.016125
+
+[node name="FoodPrepInteractable" type="StaticBody2D" unique_id=1917936089]
+y_sort_enabled = true
+script = ExtResource("1_umde3")
+menu_scene = ExtResource("2_rwufh")
+on_open_audio_stream = ExtResource("3_kx65u")
+on_close_audio_Stream = ExtResource("4_rwufh")
+interactable_name = "INTERACTABLE_PREP_TABLE"
+interaction_verb = "INTERACT_GENERIC"
+metadata/_custom_type_script = "uid://d0mgmoittkwg7"
+
+[node name="BaseSprite" type="Sprite2D" parent="." unique_id=464134840]
+visible = false
+texture_filter = 1
+position = Vector2(0, -6)
+texture = ExtResource("2_kx65u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000159536]
+shape = SubResource("RectangleShape2D_40xn7")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=96510706]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1388506869]
+shape = SubResource("CircleShape2D_kx65u")
+
+[node name="PopupOpenAudio" type="AudioStreamPlayer2D" parent="." unique_id=426607927]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="PopupCloseAudio" type="AudioStreamPlayer2D" parent="." unique_id=120197457]
+unique_name_in_owner = true
+bus = &"SFX"

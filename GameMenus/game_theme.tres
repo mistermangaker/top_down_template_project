@@ -1,7 +1,24 @@
 [gd_resource type="Theme" format=3 uid="uid://cg5ck2xb78ke7"]
 
-[ext_resource type="FontFile" uid="uid://4c3nt46vgepj" path="res://GameMenus/PixelifySans-VariableFont_wght.ttf" id="1_7iu0v"]
+[ext_resource type="FontFile" uid="uid://d3y5vc8g25t3q" path="res://GameMenus/monogram-extended.ttf" id="1_7iu0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7iu0v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [resource]
 default_font = ExtResource("1_7iu0v")
 default_font_size = 12
+Label/constants/outline_size = 4
+PopupPanel/font_sizes/title_font_size = 32
+PopupPanel/styles/panel = SubResource("StyleBoxFlat_7iu0v")
+RichTextLabel/constants/outline_size = 4
+TooltipLabel/font_sizes/font_size = 32

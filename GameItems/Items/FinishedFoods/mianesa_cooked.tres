@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://mpkcccxc0h60"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_sdipj"]
+[ext_resource type="Texture2D" uid="uid://e826qp7lnsrn" path="res://Assets/Sprites/ItemSprites/mianesa.png" id="2_l2bve"]
+
+[resource]
+script = ExtResource("1_sdipj")
+texture = ExtResource("2_l2bve")
+display_name = "COOKED_MILANESA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

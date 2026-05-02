@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://binsdcxkbmmo1"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_ww8f5"]
+[ext_resource type="Texture2D" uid="uid://c8cq5a0rwji4c" path="res://Assets/Sprites/ItemSprites/FinishedFoods/grilled_cheese_cooked.png" id="2_e3vhg"]
+
+[resource]
+script = ExtResource("1_ww8f5")
+texture = ExtResource("2_e3vhg")
+display_name = "GRILLEDCHEESE"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

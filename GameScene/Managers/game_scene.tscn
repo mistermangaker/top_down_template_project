@@ -1,15 +1,38 @@
 [gd_scene format=3 uid="uid://nvydwcpyo0vj"]
 
 [ext_resource type="Script" uid="uid://cpf8kv6qcd7ly" path="res://GameScene/Managers/game_manager.gd" id="1_onf2v"]
-[ext_resource type="PackedScene" uid="uid://cstdxwns6y1j7" path="res://Levels/test_scene.tscn" id="2_buha4"]
+[ext_resource type="PackedScene" uid="uid://cendkbj3a1dsa" path="res://Levels/main_game_scene.tscn" id="2_ctvmi"]
 [ext_resource type="Script" uid="uid://cvl4738jlr58u" path="res://GameScene/Managers/scene_manager.gd" id="3_6ynty"]
 [ext_resource type="Script" uid="uid://bhykfq6kopura" path="res://GameScene/Managers/game_systems.gd" id="3_ctvmi"]
 [ext_resource type="Script" uid="uid://dajqse6vssilc" path="res://GameScene/Managers/player_input_detector.gd" id="3_wo00q"]
 [ext_resource type="PackedScene" uid="uid://ckf3vrw7jg20" path="res://GameScene/Managers/ui_manager.tscn" id="4_e2ns8"]
+[ext_resource type="Script" uid="uid://bv0g3nx1x5wx" path="res://GameScene/Managers/game_data.gd" id="5_buha4"]
+[ext_resource type="Script" uid="uid://dwe0jomb8abbq" path="res://GameItems/Scripts/customer_order_day_drop_pool.gd" id="6_ar8qa"]
+[ext_resource type="Script" uid="uid://b1uagdoafb0gi" path="res://GameItems/Scripts/base_order.gd" id="7_cg0je"]
+[ext_resource type="Resource" uid="uid://bgvw7jh0ugc7j" path="res://GameItems/CustomerOrders/generic_order.tres" id="8_62eg1"]
+[ext_resource type="Resource" uid="uid://cd2nylkp57ywr" path="res://GameItems/CustomerOrders/cust_5.tres" id="9_btn3k"]
+[ext_resource type="Resource" uid="uid://b73k2oow5qa6d" path="res://GameItems/CustomerOrders/cust_4.tres" id="10_ka8as"]
+[ext_resource type="Resource" uid="uid://rpjy6e7nevpu" path="res://GameItems/CustomerOrders/cust_3.tres" id="11_nci2h"]
+[ext_resource type="Resource" uid="uid://cymx21f8icy2p" path="res://GameItems/CustomerOrders/well_done_gentleman.tres" id="12_ka8as"]
+[ext_resource type="PackedScene" uid="uid://dtblrs16w1c6l" path="res://Characters/Npcs/npc_3.tscn" id="13_ka8as"]
+[ext_resource type="PackedScene" uid="uid://uf1ab5jdjp8h" path="res://Characters/Npcs/npc_5.tscn" id="14_btn3k"]
+[ext_resource type="PackedScene" uid="uid://br8ko3pxsqwu5" path="res://Characters/Npcs/npc_4.tscn" id="14_nci2h"]
+
+[sub_resource type="Resource" id="Resource_iab20"]
+script = ExtResource("6_ar8qa")
+npc_orders = Dictionary[ExtResource("7_cg0je"), float]({
+ExtResource("8_62eg1"): 10.0,
+ExtResource("9_btn3k"): 1.0,
+ExtResource("10_ka8as"): 1.0,
+ExtResource("11_nci2h"): 1.0,
+ExtResource("12_ka8as"): 5.0
+})
+npcs = Array[PackedScene]([ExtResource("13_ka8as"), ExtResource("14_nci2h"), ExtResource("14_btn3k")])
+metadata/_custom_type_script = "uid://dwe0jomb8abbq"
 
 [node name="Game" type="Node" unique_id=1547121126]
 script = ExtResource("1_onf2v")
-starting_scene = ExtResource("2_buha4")
+starting_scene = ExtResource("2_ctvmi")
 
 [node name="Systems" type="Node" parent="." unique_id=1104527757 node_paths=PackedStringArray("player_input_detector")]
 process_mode = 3
@@ -21,6 +44,11 @@ process_mode = 3
 process_priority = 2
 process_physics_priority = 2
 script = ExtResource("3_wo00q")
+
+[node name="GameData" type="Node" parent="Systems" unique_id=160395627]
+script = ExtResource("5_buha4")
+days_drop_pool = Array[ExtResource("6_ar8qa")]([SubResource("Resource_iab20")])
+required_orders = Array[int]([8, 8, 10, 10, 12, 12, 14, 14])
 
 [node name="SceneManager" type="Node" parent="." unique_id=1621697619]
 script = ExtResource("3_6ynty")

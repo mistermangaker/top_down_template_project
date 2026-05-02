@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="CustomerOrderCategory" format=3 uid="uid://bgvw7jh0ugc7j"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_acab2"]
+[ext_resource type="Resource" uid="uid://dhw8sch1c32pn" path="res://GameItems/Items/FinishedFoods/empanda_burnt.tres" id="2_17uwe"]
+[ext_resource type="Resource" uid="uid://chsjgs6ifncul" path="res://GameItems/Items/FinishedFoods/empanda_cooked.tres" id="2_olnuy"]
+[ext_resource type="Script" uid="uid://byd8g8f8rx1jc" path="res://GameItems/Scripts/customer_order_category.gd" id="2_pma6q"]
+[ext_resource type="Resource" uid="uid://binsdcxkbmmo1" path="res://GameItems/Items/FinishedFoods/grilled_cheese_cooked.tres" id="3_l5ybq"]
+[ext_resource type="Resource" uid="uid://4ien2e06ifyw" path="res://GameItems/Items/FinishedFoods/mianesa_finished.tres" id="4_iq2pf"]
+[ext_resource type="Resource" uid="uid://cg7otj3vp7237" path="res://GameItems/Items/FinishedFoods/pizza_finished.tres" id="5_47cbn"]
+[ext_resource type="Resource" uid="uid://cg67tfujak2of" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_cooked.tres" id="6_52auy"]
+[ext_resource type="Resource" uid="uid://cd1s1rquxir4k" path="res://GameItems/Items/FinishedFoods/grilled_cheese_burnt.tres" id="7_6psfh"]
+[ext_resource type="Resource" uid="uid://d0e8yplymao3u" path="res://GameItems/Items/Drinks/beer.tres" id="10_21xvp"]
+[ext_resource type="Resource" uid="uid://cpwfc7fpjj3j2" path="res://GameItems/Items/Drinks/soda_cherry.tres" id="11_i7wdf"]
+[ext_resource type="Resource" uid="uid://dt81k5yebawp2" path="res://GameItems/Items/Drinks/soda_lemon.tres" id="12_jlp3i"]
+[ext_resource type="Resource" uid="uid://bvadxhhns2u6h" path="res://GameItems/Items/Drinks/soda_lime.tres" id="13_5vnoe"]
+[ext_resource type="Resource" uid="uid://c3e0a3ar24wr7" path="res://GameItems/Items/BaseIngredients/meat_cooked.tres" id="13_21xvp"]
+[ext_resource type="Resource" uid="uid://cd030pei6ptcj" path="res://GameItems/Items/BaseIngredients/potato_baked.tres" id="14_i7wdf"]
+[ext_resource type="Resource" uid="uid://d2xf3vvg173cd" path="res://GameItems/Items/BaseIngredients/bread.tres" id="16_5vnoe"]
+
+[resource]
+script = ExtResource("2_pma6q")
+available_main_dishes = Dictionary[ExtResource("1_acab2"), float]({
+ExtResource("2_17uwe"): 1.0,
+ExtResource("2_olnuy"): 1.0,
+ExtResource("3_l5ybq"): 1.0,
+ExtResource("7_6psfh"): 1.0,
+ExtResource("4_iq2pf"): 1.0,
+ExtResource("5_47cbn"): 1.0,
+ExtResource("6_52auy"): 1.0
+})
+available_side_dishes = Dictionary[ExtResource("1_acab2"), float]({
+ExtResource("13_21xvp"): 1.0,
+ExtResource("14_i7wdf"): 2.0,
+ExtResource("16_5vnoe"): 1.0
+})
+available_drinks = Dictionary[ExtResource("1_acab2"), float]({
+ExtResource("10_21xvp"): 4.0,
+ExtResource("11_i7wdf"): 1.0,
+ExtResource("12_jlp3i"): 1.0,
+ExtResource("13_5vnoe"): 1.0
+})
+metadata/_custom_type_script = "uid://byd8g8f8rx1jc"

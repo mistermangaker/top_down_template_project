@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bkq6glfbcsx6k"]
+
+[ext_resource type="Script" uid="uid://b11otbefpj47w" path="res://Interactables/KitchenInteractables/item_shelf_interactable.gd" id="1_7os5s"]
+[ext_resource type="PackedScene" uid="uid://dvpncp5cnu52q" path="res://GameItems/Scripts/held_items_visual.tscn" id="3_ml4tb"]
+[ext_resource type="AudioStream" uid="uid://csmyk20v1dj6j" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Select 1 (Saw).ogg" id="4_5b0b8"]
+[ext_resource type="Script" uid="uid://dvsqqf57incp4" path="res://GameItems/Scripts/item_holder.gd" id="4_u6odp"]
+[ext_resource type="AudioStream" uid="uid://6mhbhrfwopua" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Saw).ogg" id="5_ml4tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40xn7"]
+size = Vector2(14, 14)
+
+[node name="ItemShelf" type="StaticBody2D" unique_id=1917936089]
+y_sort_enabled = true
+script = ExtResource("1_7os5s")
+metadata/_custom_type_script = "uid://d0mgmoittkwg7"
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=36253158]
+unique_name_in_owner = true
+z_index = 1
+texture_filter = 1
+position = Vector2(0, -8.999999)
+scale = Vector2(0.8, 0.8)
+
+[node name="HeldItemsVisual" parent="." unique_id=1954037336 instance=ExtResource("3_ml4tb")]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(0, -12)
+scale = Vector2(0.8, 0.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1000159536]
+shape = SubResource("RectangleShape2D_40xn7")
+
+[node name="ItemHolder" type="Node" parent="." unique_id=1054772638]
+unique_name_in_owner = true
+script = ExtResource("4_u6odp")
+
+[node name="PickUpAudio" type="AudioStreamPlayer" parent="." unique_id=1315508187]
+stream = ExtResource("4_5b0b8")
+volume_db = -4.0
+
+[node name="PutDownAudio" type="AudioStreamPlayer" parent="." unique_id=1982467031]
+stream = ExtResource("5_ml4tb")
+volume_db = -4.0

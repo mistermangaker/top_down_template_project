@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerOrder" format=3 uid="uid://rpjy6e7nevpu"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_pk1pe"]
+[ext_resource type="Script" uid="uid://cgsw66eauin01" path="res://GameItems/Scripts/customer_order.gd" id="2_54bir"]
+[ext_resource type="Resource" uid="uid://4ien2e06ifyw" path="res://GameItems/Items/FinishedFoods/mianesa_finished.tres" id="2_yaenv"]
+[ext_resource type="Resource" uid="uid://d0e8yplymao3u" path="res://GameItems/Items/Drinks/beer.tres" id="3_up811"]
+
+[resource]
+script = ExtResource("2_54bir")
+required_items = Dictionary[ExtResource("1_pk1pe"), int]({
+ExtResource("2_yaenv"): 1,
+ExtResource("3_up811"): 2
+})
+metadata/_custom_type_script = "uid://cgsw66eauin01"

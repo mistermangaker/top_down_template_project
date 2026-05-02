@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://dnaji5pgntxyd"]
+
+[ext_resource type="AudioStream" uid="uid://c01cm165f1mgo" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Saw).ogg" id="1_o2dvy"]
+[ext_resource type="AudioStream" uid="uid://cr88168lwftc3" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Sine).ogg" id="2_kp1cr"]
+[ext_resource type="AudioStream" uid="uid://cp3p7kj4nefv3" path="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Popup Close 1 (Square).ogg" id="3_rx70y"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_o2dvy")
+stream_1/stream = ExtResource("2_kp1cr")
+stream_2/stream = ExtResource("3_rx70y")

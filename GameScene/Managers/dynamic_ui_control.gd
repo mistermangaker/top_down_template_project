@@ -11,24 +11,18 @@ func add_new(menu:PackedScene, override_id:String = "")->BaseCloseableUI:
 	return new_instance
 
 func set_menu(menu:PackedScene, override_id:String = "")->BaseCloseableUI:
-	print("stting")
 	if menu == null:
 		printerr("hey dummy you forgot to set up this menu with id: %s fix this!"%override_id)
 		print_stack()
 		return
 	var new_instance = menu.instantiate() as BaseCloseableUI
 	if new_instance:
-		print("setting")
+		
 		if current_menu:
 			_force_close_current_menu()
 		if override_id !="":
 			new_instance.unique_ID = override_id
-		print(new_instance)
 		add_child(new_instance)
-		
-		print(get_child_count())
-		print(new_instance.global_position)
-		
 		current_menu = new_instance
 		current_menu.close_requested.connect(_force_close_current_menu)
 		current_menu.on_open()

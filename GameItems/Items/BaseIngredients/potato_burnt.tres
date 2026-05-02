@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b0u5ki82hv2ff"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_b8021"]
+[ext_resource type="Texture2D" uid="uid://dd7jytxvpaoro" path="res://Assets/Sprites/ItemSprites/Potato_brunt.png" id="2_0st5k"]
+
+[resource]
+script = ExtResource("1_b8021")
+texture = ExtResource("2_0st5k")
+display_name = "BURNT_POTATO"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

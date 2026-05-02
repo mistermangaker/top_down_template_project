@@ -25,7 +25,7 @@ func load_key_bindings()->void:
 	for binding in bindings:
 		var binding_key = get_variable(_keybindings,binding,-1)
 		if binding_key !=-1:
-			print("found it %s %s" % [binding,str(binding_key)])
+			
 			var action = InputMap.action_get_events(binding)[0]
 			var key = binding_key as Key
 			

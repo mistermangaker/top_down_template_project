@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://4ien2e06ifyw"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_qclfj"]
+[ext_resource type="Texture2D" uid="uid://dxu5vh2y4msgi" path="res://Assets/Sprites/ItemSprites/Milanesa Full.png" id="2_qclfj"]
+
+[resource]
+script = ExtResource("1_qclfj")
+texture = ExtResource("2_qclfj")
+display_name = "MILANESA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

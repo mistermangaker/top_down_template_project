@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="top_down_template"
-run/main_scene="uid://nvydwcpyo0vj"
+config/name="lunch with argentina"
+run/main_scene="uid://c8fdfo73hh5os"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -69,10 +69,19 @@ move_backward={
 ]
 }
 
+[internationalization]
+
+locale/translation_remaps={
+"res://Assets/logo_en.png": PackedStringArray("res://Assets/logo_es.png:es", "res://Assets/logo_en.png:en")
+}
+locale/translations=PackedStringArray("res://Translations/game_translations.en.translation", "res://Translations/game_translations.es.translation")
+locale/locale_filter_mode=1
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

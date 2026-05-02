@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bffb2md5w8fhj"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_swmlv"]
+[ext_resource type="Texture2D" uid="uid://glijmmhfkkqg" path="res://Assets/Sprites/ItemSprites/Egg_burnt.png" id="2_3tilb"]
+
+[resource]
+script = ExtResource("1_swmlv")
+texture = ExtResource("2_3tilb")
+display_name = "BURNT_EGG"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

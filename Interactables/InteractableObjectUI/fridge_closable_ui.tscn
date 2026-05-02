@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b7f35okeobahr"]
+
+[ext_resource type="Script" uid="uid://588rrdebkkl0" path="res://Interactables/InteractableObjectUI/fridge_closable_ui.gd" id="1_nft8d"]
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="2_ahqdh"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="3_cn73l"]
+[ext_resource type="Resource" uid="uid://uve7udaeqcr6" path="res://GameItems/Items/BaseIngredients/raw_meat.tres" id="4_cn73l"]
+[ext_resource type="Resource" uid="uid://dj0b733m5wnwp" path="res://GameItems/Items/BaseIngredients/potato_raw.tres" id="5_15t11"]
+[ext_resource type="Resource" uid="uid://jrj1a3kmmhrr" path="res://GameItems/Items/BaseIngredients/tomato_raw.tres" id="6_lxqxo"]
+[ext_resource type="Resource" uid="uid://b24jwbphqceqi" path="res://GameItems/Items/BaseIngredients/egg.tres" id="7_smsfr"]
+[ext_resource type="Resource" uid="uid://d2xf3vvg173cd" path="res://GameItems/Items/BaseIngredients/bread.tres" id="8_t6op3"]
+[ext_resource type="Resource" uid="uid://bqjosnige2hi0" path="res://GameItems/Items/BaseIngredients/bread_crumbs.tres" id="9_8qpj2"]
+[ext_resource type="Resource" uid="uid://ckvlke2wiq3qh" path="res://GameItems/Items/BaseIngredients/dough.tres" id="10_jqb5k"]
+
+[node name="FridgeClosableUi" type="Control" unique_id=453105290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nft8d")
+fridge_items = Array[ExtResource("2_ahqdh")]([ExtResource("3_cn73l"), ExtResource("4_cn73l"), ExtResource("5_15t11"), ExtResource("6_lxqxo"), ExtResource("7_smsfr"), ExtResource("8_t6op3"), ExtResource("9_8qpj2"), ExtResource("10_jqb5k")])
+metadata/_custom_type_script = "uid://yevbbq6i1hox"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=113007254]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -155.0
+offset_right = 132.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2112866575]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=411668643]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=654330638]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1935037465]
+layout_mode = 2
+
+[node name="ItemContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer" unique_id=300534065]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Close" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=893760257]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "UI_CLOSE"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Close" to="." method="_on_close_pressed"]

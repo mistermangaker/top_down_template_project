@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cli1eukwo5nf8"]
+
+[ext_resource type="Script" uid="uid://scvlbyix65wa" path="res://Interactables/KitchenInteractables/fridge_interactable.gd" id="1_yw2r7"]
+[ext_resource type="PackedScene" uid="uid://b7f35okeobahr" path="res://Interactables/InteractableObjectUI/fridge_closable_ui.tscn" id="2_0rfo8"]
+[ext_resource type="Texture2D" uid="uid://deb3nlcoioy7l" path="res://Assets/Sprites/Terrain/Singles/Grocery_Store_Singles_Shadowless_74.png" id="2_qas2n"]
+[ext_resource type="Texture2D" uid="uid://depr78oq5bgf6" path="res://Assets/Sprites/Terrain/Singles/Grocery_Store_Singles_Shadowless_72.png" id="3_dbe4h"]
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="4_7v6bg"]
+[ext_resource type="Resource" uid="uid://d0e8yplymao3u" path="res://GameItems/Items/Drinks/beer.tres" id="5_2wa8v"]
+[ext_resource type="Resource" uid="uid://cpwfc7fpjj3j2" path="res://GameItems/Items/Drinks/soda_cherry.tres" id="6_23owm"]
+[ext_resource type="Resource" uid="uid://dt81k5yebawp2" path="res://GameItems/Items/Drinks/soda_lemon.tres" id="7_h17fe"]
+[ext_resource type="Resource" uid="uid://bvadxhhns2u6h" path="res://GameItems/Items/Drinks/soda_lime.tres" id="8_svoww"]
+[ext_resource type="AudioStream" uid="uid://dsmvq7d76b1tf" path="res://Assets/Audio/Randomizers/ui_open_generic_audio_stream.tres" id="10_23owm"]
+[ext_resource type="AudioStream" uid="uid://dnaji5pgntxyd" path="res://Assets/Audio/Randomizers/ui_close_generic_audio_stream.tres" id="11_h17fe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7u3ck"]
+size = Vector2(27, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_685t6"]
+radius = 31.016125
+
+[node name="FridgeInteractable" type="StaticBody2D" unique_id=1732990632]
+script = ExtResource("1_yw2r7")
+open_texture = ExtResource("2_qas2n")
+closed_texture = ExtResource("3_dbe4h")
+fridge_items = Array[ExtResource("4_7v6bg")]([ExtResource("5_2wa8v"), ExtResource("6_23owm"), ExtResource("7_h17fe"), ExtResource("8_svoww")])
+menu_scene = ExtResource("2_0rfo8")
+on_open_audio_stream = ExtResource("10_23owm")
+on_close_audio_Stream = ExtResource("11_h17fe")
+interactable_name = "INTERACTABLE_FRIDGE"
+interaction_verb = "INTERACT_OPEN"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1312473542]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_7u3ck")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=210414949]
+position = Vector2(0, -14)
+texture = ExtResource("3_dbe4h")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=583756680]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=25638422]
+shape = SubResource("CircleShape2D_685t6")
+
+[node name="PopupOpenAudio" type="AudioStreamPlayer2D" parent="." unique_id=918616490]
+unique_name_in_owner = true
+bus = &"SFX"
+
+[node name="PopupCloseAudio" type="AudioStreamPlayer2D" parent="." unique_id=1227584643]
+unique_name_in_owner = true
+bus = &"SFX"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CustomerOrder" format=3 uid="uid://b73k2oow5qa6d"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_17vv6"]
+[ext_resource type="Resource" uid="uid://cd1s1rquxir4k" path="res://GameItems/Items/FinishedFoods/grilled_cheese_burnt.tres" id="2_b813b"]
+[ext_resource type="Script" uid="uid://cgsw66eauin01" path="res://GameItems/Scripts/customer_order.gd" id="2_qtxfa"]
+[ext_resource type="Resource" uid="uid://d0e8yplymao3u" path="res://GameItems/Items/Drinks/beer.tres" id="3_s8yri"]
+
+[resource]
+script = ExtResource("2_qtxfa")
+required_items = Dictionary[ExtResource("1_17vv6"), int]({
+ExtResource("2_b813b"): 3,
+ExtResource("3_s8yri"): 1
+})
+metadata/_custom_type_script = "uid://cgsw66eauin01"

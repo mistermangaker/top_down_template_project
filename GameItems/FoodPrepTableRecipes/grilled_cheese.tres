@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3 uid="uid://bys4o08cgaxl0"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_avguc"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/Scripts/crafting_recipe.gd" id="2_ikgv7"]
+[ext_resource type="Resource" uid="uid://bflbo5iiiw5rg" path="res://GameItems/Items/FinishedFoods/grilled_cheese_raw.tres" id="2_yjvla"]
+[ext_resource type="Resource" uid="uid://d2xf3vvg173cd" path="res://GameItems/Items/BaseIngredients/bread.tres" id="3_xq8qh"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="4_pix8i"]
+
+[resource]
+script = ExtResource("2_ikgv7")
+required_items = Dictionary[ExtResource("1_avguc"), int]({
+ExtResource("3_xq8qh"): 2,
+ExtResource("4_pix8i"): 1
+})
+output_item = ExtResource("2_yjvla")
+metadata/_custom_type_script = "uid://ca3qt2exyeowq"

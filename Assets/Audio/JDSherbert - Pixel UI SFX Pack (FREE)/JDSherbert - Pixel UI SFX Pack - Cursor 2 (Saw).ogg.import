@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7biqnn8l7kuc"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cursor 2 (Saw).ogg-055042ccfb88854bd0ed0aaa5ddbefa2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/JDSherbert - Pixel UI SFX Pack (FREE)/JDSherbert - Pixel UI SFX Pack - Cursor 2 (Saw).ogg"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cursor 2 (Saw).ogg-055042ccfb88854bd0ed0aaa5ddbefa2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

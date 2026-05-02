@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://k3tl7w7ijt3x"]
+
+[ext_resource type="Script" uid="uid://tj4uh6prw7u1" path="res://GameScene/Managers/order_container.gd" id="1_rmxdt"]
+
+[node name="OrderContainer" type="VBoxContainer" unique_id=1096239378]
+offset_bottom = 4.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("1_rmxdt")
+
+[node name="RequiredItems" type="HBoxContainer" parent="." unique_id=311817172]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ForbiddenItems" type="HBoxContainer" parent="." unique_id=1902268261]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2

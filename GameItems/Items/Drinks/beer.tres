@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://d0e8yplymao3u"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_f4ljq"]
+[ext_resource type="Texture2D" uid="uid://7svbefexikrh" path="res://Assets/Sprites/ItemSprites/Drinks/beer_1.png" id="2_4r6yf"]
+
+[resource]
+script = ExtResource("1_f4ljq")
+texture = ExtResource("2_4r6yf")
+display_name = "BEER"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

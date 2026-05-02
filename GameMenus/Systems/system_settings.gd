@@ -15,6 +15,7 @@ var resolution_index:int = 0
 var master_volume:float = 0
 var music_volume:float = 0
 var sfx_volume:float = 0
+var language_index:int = 0
 
 var settings_configs:ConfigFile = ConfigFile.new()
 
@@ -30,11 +31,19 @@ const _keybindings = "key_bindings"
 const _graphics = "graphics"
 const _window_mode = "window_mode"
 const _resolution_mode = "resolution_mode"
+const _language_index = "language"
 
 const _volume = "volume"
 const _master_volume = "master"
 const _music_volume = "music"
 const _sfx_volume = "sfx"
+
+
+
+const LAUNGUAGE_ARRAY:Array[String]=[
+	"GRAPHIC_GAME_LANGUAGE_ES_NAME",
+	"GRAPHIC_GAME_LANGUAGE_EN_NAME"
+]
 
 const RESOLUTION_ARRAY:Array[Vector2i]=[
 	Vector2i(1152,648),
@@ -63,6 +72,7 @@ func _ready() -> void:
 	load_key_bindings()
 	load_audio_settings()
 	load_graphics_settings()
+	load_language_settings()
 
 var should_save:bool =false
 @warning_ignore("unused_parameter")
@@ -83,7 +93,7 @@ func load_key_bindings()->void:
 	for binding in bindings:
 		var binding_key = get_variable(_keybindings,binding,-1)
 		if binding_key !=-1:
-			#print("found it %s %s" % [binding,str(binding_key)])
+			
 			var action = InputMap.action_get_events(binding)[0]
 			var key = binding_key as Key
 			
@@ -148,6 +158,21 @@ func set_window_mode_index(index:int)->void:
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS,true)
 	on_window_mode_selected.emit(index)
 	set_variable(_graphics,_window_mode,index)
+
+func load_language_settings()->void:
+	language_index = get_variable(_graphics,_language_index,0)
+	const language_array = ["en","es"]
+	TranslationServer.set_locale(language_array[language_index])
+
+func get_language_index()->int:
+	return language_index
+
+func set_language_index(index:int)->void:
+	language_index = index
+	const language_array = ["en","es"]
+	TranslationServer.set_locale(language_array[language_index])
+	set_variable(_graphics,_language_index,language_index)
+
 
 func get_window_mode_index()->int:
 	return window_mode_index

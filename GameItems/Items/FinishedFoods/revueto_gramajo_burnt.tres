@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://77iu0oqlu5vn"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_wmt0n"]
+[ext_resource type="Texture2D" uid="uid://cuw30posayhka" path="res://Assets/Sprites/ItemSprites/Revuelto Gramajo burnt.png" id="2_ief4s"]
+
+[resource]
+script = ExtResource("1_wmt0n")
+texture = ExtResource("2_ief4s")
+display_name = "BURNT_REVUETOGRAMAJO"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

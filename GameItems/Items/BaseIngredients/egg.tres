@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b24jwbphqceqi"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_4bdxe"]
+[ext_resource type="Texture2D" uid="uid://cg4q8uryiyrd2" path="res://Assets/Sprites/ItemSprites/egg.png" id="2_4kxh6"]
+
+[resource]
+script = ExtResource("1_4bdxe")
+texture = ExtResource("2_4kxh6")
+display_name = "EGG"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

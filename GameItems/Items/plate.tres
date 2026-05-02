@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cp2tg2hxjfpyx"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_22tt6"]
+[ext_resource type="Texture2D" uid="uid://cldr4vm0vldso" path="res://Assets/Sprites/ItemSprites/plate.png" id="2_fhoae"]
+
+[resource]
+script = ExtResource("1_22tt6")
+texture = ExtResource("2_fhoae")
+display_name = "plate"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

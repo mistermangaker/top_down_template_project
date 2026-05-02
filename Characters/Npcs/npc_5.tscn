@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://uf1ab5jdjp8h"]
+
+[ext_resource type="PackedScene" uid="uid://8kb2v6pyd56e" path="res://Characters/Npcs/npc_agent.tscn" id="1_6p1dn"]
+[ext_resource type="SpriteFrames" uid="uid://d1fghejn8fav5" path="res://Assets/Sprites/CharacterSprites/default_dan.tres" id="2_nqtjk"]
+
+[node name="NPC" unique_id=1803841495 instance=ExtResource("1_6p1dn")]
+override_skin = ExtResource("2_nqtjk")

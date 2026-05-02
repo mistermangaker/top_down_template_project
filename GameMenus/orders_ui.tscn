@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://dvthm67fykuyd"]
+
+[ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="1_24b4h"]
+[ext_resource type="Script" uid="uid://cff6ssn23qanw" path="res://GameMenus/orders_ui.gd" id="1_ughxj"]
+[ext_resource type="PackedScene" uid="uid://k3tl7w7ijt3x" path="res://GameScene/Managers/order_container.tscn" id="2_ughxj"]
+[ext_resource type="Texture2D" uid="uid://divmcal4swteo" path="res://Assets/Sprites/UISprites/ui_time_out_dial_over.png" id="4_4jbsu"]
+[ext_resource type="Texture2D" uid="uid://3rlxkbfqgeh1" path="res://Assets/Sprites/UISprites/ui_time_out_dial_progress.png" id="5_t51b1"]
+
+[sub_resource type="Animation" id="Animation_ughxj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/Control/CountDownLabel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(92, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/VBoxContainer/Control/CountDownLabel:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(41.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/VBoxContainer/GameStateLabel:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_24b4h"]
+resource_name = "countdown"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/Control/CountDownLabel:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-60, -0.25, 0, 0.4, 80.5, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.73333335)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/VBoxContainer/Control/CountDownLabel:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(9.5, -0.25, 0, 0.8333333, -1, 0, -0.2666667, 6.5, 0.6666667, -1),
+"times": PackedFloat32Array(-0.033333335, 0.8333334)
+}
+
+[sub_resource type="Animation" id="Animation_4jbsu"]
+resource_name = "day_finished"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/GameStateLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.09019608), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jbsu"]
+_data = {
+&"RESET": SubResource("Animation_ughxj"),
+&"countdown": SubResource("Animation_24b4h"),
+&"day_finished": SubResource("Animation_4jbsu")
+}
+
+[sub_resource type="Animation" id="Animation_t51b1"]
+resource_name = "day_state_fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/VBoxContainer/GameStateLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.09019608), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6oosk"]
+_data = {
+&"day_state_fadein": SubResource("Animation_t51b1")
+}
+
+[node name="OrdersUI" type="Control" unique_id=1320207576]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_24b4h")
+script = ExtResource("1_ughxj")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1089911460]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+
+[node name="OrdersConatiner" type="Control" parent="MarginContainer" unique_id=1743949974]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="OrderContainer" parent="MarginContainer/OrdersConatiner" unique_id=1096239378 instance=ExtResource("2_ughxj")]
+layout_mode = 0
+
+[node name="DayProgress" type="VBoxContainer" parent="." unique_id=1280003558]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_bottom = 110.0
+grow_horizontal = 0
+
+[node name="DayEndProgressBar" type="TextureProgressBar" parent="DayProgress" unique_id=1443454916]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_over = ExtResource("4_4jbsu")
+texture_progress = ExtResource("5_t51b1")
+
+[node name="DayEndProgressText" type="Label" parent="DayProgress/DayEndProgressBar" unique_id=471869037]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -7.5
+offset_right = 8.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
+text = "5:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrdersLabel" type="Label" parent="DayProgress" unique_id=86670305]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=705947778]
+libraries/ = SubResource("AnimationLibrary_4jbsu")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1111558108]
+libraries/ = SubResource("AnimationLibrary_6oosk")
+
+[node name="Control" type="Control" parent="." unique_id=1063067480]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=497432718]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -24.5
+offset_right = 158.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Control/VBoxContainer" unique_id=280174252]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="CountDownLabel" type="Label" parent="Control/VBoxContainer/Control" unique_id=1339649185]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 41.5)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = 69.5
+offset_right = 158.0
+offset_bottom = 115.33333
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+
+[node name="GameStateLabel" type="Label" parent="Control/VBoxContainer" unique_id=690997555]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 41.5)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "UI_DAY_FINISHED"
+horizontal_alignment = 1
+
+[node name="DayInfoPanel" type="PanelContainer" parent="." unique_id=1736032177]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -121.0
+offset_right = 192.0
+offset_bottom = 109.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DayInfoPanel" unique_id=791536245]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DayInfoPanel/MarginContainer" unique_id=1317020630]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DayNumberLabel" type="Label" parent="DayInfoPanel/MarginContainer/VBoxContainer" unique_id=257842102]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "todays shift"
+horizontal_alignment = 1
+
+[node name="RequiredOrdersLabel" type="Label" parent="DayInfoPanel/MarginContainer/VBoxContainer" unique_id=1969209008]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "todays shift"
+horizontal_alignment = 1
+
+[node name="PressToStartLabel" type="Label" parent="DayInfoPanel/MarginContainer/VBoxContainer" unique_id=1264446614]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "todays shift"
+horizontal_alignment = 1

@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://ck6em6h2a66n6" path="res://GameMenus/Menus/pause_screen_ui.tscn" id="2_x0yu6"]
 [ext_resource type="PackedScene" uid="uid://7xxc4n056xju" path="res://GameMenus/Menus/game_options.tscn" id="3_4ie3f"]
 [ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="3_hxj2x"]
+[ext_resource type="PackedScene" uid="uid://dvthm67fykuyd" path="res://GameMenus/orders_ui.tscn" id="4_7xa65"]
 [ext_resource type="Script" uid="uid://pt3crctncfvc" path="res://GameScene/Managers/transition_screen.gd" id="6_7xa65"]
+[ext_resource type="Script" uid="uid://c6kl3vy3sem7u" path="res://GameScene/Managers/ui_audio.gd" id="7_oeuc5"]
 
 [sub_resource type="Animation" id="Animation_4fg8c"]
 length = 0.001
@@ -52,6 +54,7 @@ process_mode = 3
 script = ExtResource("1_gnfco")
 
 [node name="InWorldUI" type="Node2D" parent="." unique_id=1065882735]
+z_index = 99
 
 [node name="TransitionScreen" type="CanvasLayer" parent="." unique_id=463831947]
 script = ExtResource("6_7xa65")
@@ -98,6 +101,10 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("3_hxj2x")
 
+[node name="OrdersUI" parent="CanvasLayer/Control" unique_id=1320207576 instance=ExtResource("4_7xa65")]
+unique_name_in_owner = true
+layout_mode = 1
+
 [node name="DynamicUI" type="Control" parent="CanvasLayer/Control" unique_id=1712594895]
 unique_name_in_owner = true
 layout_mode = 1
@@ -117,4 +124,10 @@ layout_mode = 1
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
-offset_right = 17.0
+offset_left = 0.0
+
+[node name="UIAudio" type="Node" parent="." unique_id=1015937229]
+script = ExtResource("7_oeuc5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UIAudio" unique_id=1773167008]
+bus = &"SFX"

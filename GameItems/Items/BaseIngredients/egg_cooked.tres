@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bmtqyrx4wh6wj"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_d4tdn"]
+[ext_resource type="Texture2D" uid="uid://c5lxlq85lj6ru" path="res://Assets/Sprites/ItemSprites/Egg_welldone.png" id="2_d4tdn"]
+
+[resource]
+script = ExtResource("1_d4tdn")
+texture = ExtResource("2_d4tdn")
+display_name = "COOKED_EGG"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

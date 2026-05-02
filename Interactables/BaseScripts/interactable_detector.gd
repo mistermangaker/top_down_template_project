@@ -10,6 +10,9 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
+func reset_and_rescan()->void:
+	closest = null
+	sort_closest()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is InteractableObject:
@@ -37,7 +40,10 @@ func sort_closest()->void:
 		set_closest(null)
 		return
 	elif interactables.size()==1:
-		set_closest(interactables[0])
+		if interactables[0].should_be_visible():
+			set_closest(interactables[0])
+		else:
+			set_closest(null)
 		return
 	
 	var temp_closest:InteractableObject = interactables[0]
@@ -48,5 +54,8 @@ func sort_closest()->void:
 		if global_position.distance_to(i.global_position) < global_position.distance_to(temp_closest.global_position):
 			temp_closest = i
 	
-	set_closest(temp_closest)
+	if temp_closest.should_be_visible():
+		set_closest(temp_closest)
+	else:
+		set_closest(null)
 	

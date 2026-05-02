@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cpwfc7fpjj3j2"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_x8ugt"]
+[ext_resource type="Texture2D" uid="uid://brt68cwrkul8o" path="res://Assets/Sprites/ItemSprites/Drinks/soda_3.png" id="2_xeyyb"]
+
+[resource]
+script = ExtResource("1_x8ugt")
+texture = ExtResource("2_xeyyb")
+display_name = "SODACHERRY"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

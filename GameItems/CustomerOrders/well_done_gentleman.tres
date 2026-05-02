@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CustomerOrderCategory" format=3 uid="uid://cymx21f8icy2p"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_hu4a1"]
+[ext_resource type="Script" uid="uid://byd8g8f8rx1jc" path="res://GameItems/Scripts/customer_order_category.gd" id="2_rsd7e"]
+[ext_resource type="Resource" uid="uid://b0u5ki82hv2ff" path="res://GameItems/Items/BaseIngredients/potato_burnt.tres" id="3_p0t68"]
+[ext_resource type="Resource" uid="uid://c751l7xhp7kw6" path="res://GameItems/Items/BaseIngredients/meat_burnt.tres" id="4_rwbl8"]
+[ext_resource type="Resource" uid="uid://dhw8sch1c32pn" path="res://GameItems/Items/FinishedFoods/empanda_burnt.tres" id="5_4ovx6"]
+[ext_resource type="Resource" uid="uid://d0e8yplymao3u" path="res://GameItems/Items/Drinks/beer.tres" id="5_whuak"]
+[ext_resource type="Resource" uid="uid://cpwfc7fpjj3j2" path="res://GameItems/Items/Drinks/soda_cherry.tres" id="6_elwom"]
+[ext_resource type="Resource" uid="uid://buykjjuoqt8tn" path="res://GameItems/Items/FinishedFoods/mianesa_burnt.tres" id="6_hx8s8"]
+[ext_resource type="Resource" uid="uid://dt81k5yebawp2" path="res://GameItems/Items/Drinks/soda_lemon.tres" id="7_4ovx6"]
+[ext_resource type="Resource" uid="uid://kwptys2g81bk" path="res://GameItems/Items/FinishedFoods/pizza_burnt.tres" id="7_qypmy"]
+[ext_resource type="Resource" uid="uid://77iu0oqlu5vn" path="res://GameItems/Items/FinishedFoods/revueto_gramajo_burnt.tres" id="8_rvjk5"]
+[ext_resource type="Resource" uid="uid://cd1s1rquxir4k" path="res://GameItems/Items/FinishedFoods/grilled_cheese_burnt.tres" id="9_6vx40"]
+[ext_resource type="Resource" uid="uid://cd030pei6ptcj" path="res://GameItems/Items/BaseIngredients/potato_baked.tres" id="11_e3gn4"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="13_hlgyr"]
+
+[resource]
+script = ExtResource("2_rsd7e")
+available_main_dishes = Dictionary[ExtResource("1_hu4a1"), float]({
+ExtResource("5_4ovx6"): 1.0,
+ExtResource("6_hx8s8"): 1.0,
+ExtResource("7_qypmy"): 1.0,
+ExtResource("8_rvjk5"): 1.0,
+ExtResource("9_6vx40"): 1.0
+})
+available_side_dishes = Dictionary[ExtResource("1_hu4a1"), float]({
+ExtResource("3_p0t68"): 1.0,
+ExtResource("11_e3gn4"): 1.0,
+ExtResource("4_rwbl8"): 1.0,
+ExtResource("13_hlgyr"): 1.0
+})
+available_drinks = Dictionary[ExtResource("1_hu4a1"), float]({
+ExtResource("5_whuak"): 4.0,
+ExtResource("6_elwom"): 1.0,
+ExtResource("7_4ovx6"): 1.0
+})
+max_drinks_to_order = 6
+metadata/_custom_type_script = "uid://byd8g8f8rx1jc"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3 uid="uid://de1nyuhx5tsuf"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_ormqr"]
+[ext_resource type="Resource" uid="uid://3pl7rc4tobe4" path="res://GameItems/Items/FinishedFoods/pizza_raw.tres" id="2_gt88w"]
+[ext_resource type="Resource" uid="uid://c3e0a3ar24wr7" path="res://GameItems/Items/BaseIngredients/meat_cooked.tres" id="3_i7ucj"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="4_ldjvu"]
+[ext_resource type="Resource" uid="uid://jrj1a3kmmhrr" path="res://GameItems/Items/BaseIngredients/tomato_raw.tres" id="5_y8f6c"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/Scripts/crafting_recipe.gd" id="6_bx64d"]
+[ext_resource type="Resource" uid="uid://ckvlke2wiq3qh" path="res://GameItems/Items/BaseIngredients/dough.tres" id="6_gt88w"]
+
+[resource]
+script = ExtResource("6_bx64d")
+required_items = Dictionary[ExtResource("1_ormqr"), int]({
+ExtResource("3_i7ucj"): 1,
+ExtResource("4_ldjvu"): 2,
+ExtResource("5_y8f6c"): 1,
+ExtResource("6_gt88w"): 1
+})
+output_item = ExtResource("2_gt88w")
+metadata/_custom_type_script = "uid://ca3qt2exyeowq"

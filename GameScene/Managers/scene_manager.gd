@@ -3,9 +3,20 @@ class_name SceneManager extends Node
 signal new_level_loaded
 var cached_level_data:PackedScene
 
+var loaded_level:Node
+
+func swap_scene(packed_scene:PackedScene,transition_id:String="fade_to_black")->void:
+	if GameLevel.current:
+		GameLevel.current.exit_level()
+		GameLevel.current.queue_free()
+		GameLevel.current=null
+	GameManager.ui_manager.make_transition(transition_id)
+	await GameManager.ui_manager.scene_transition_callback
+	loaded_level= packed_scene.instantiate()
+	add_child(loaded_level)
 
 
-func transition_to_scene(scene_path:String,transition_id:String)->void:
+func transition_to_scene(scene_path:String,transition_id:String="fade_to_black")->void:
 	
 	if not ResourceLoader.exists(scene_path, "PackedScene"):
 		printerr("level data is null\nyou forgot to set the level data didnt you?")
@@ -32,7 +43,10 @@ func load_scene(packed_scene:PackedScene)->void:
 	if GameLevel.current:
 		GameLevel.current.exit_level()
 		GameLevel.current.queue_free()
+	if loaded_level !=null:
+		loaded_level.queue_free()
 	GameLevel.current = loaded
+	loaded_level = GameLevel.current
 	add_child(GameLevel.current)
 	GameLevel.current.enter_level()
 	new_level_loaded.emit()

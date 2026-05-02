@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://cg5ck2xb78ke7" path="res://GameMenus/game_theme.tres" id="1_tm2c6"]
 [ext_resource type="PackedScene" uid="uid://b7ffryvfmpu00" path="res://GameMenus/Menus/Widgets/hot_key_rebind_button.tscn" id="1_xmc1j"]
 [ext_resource type="PackedScene" uid="uid://dptn6hh5jvqx" path="res://GameMenus/Menus/Widgets/window_resolution_button.tscn" id="2_imus1"]
+[ext_resource type="Script" uid="uid://p5atxodvfc2x" path="res://GameMenus/Menus/Widgets/game_language_button.gd" id="5_0md2n"]
 
 [node name="GameOptions" type="Control" unique_id=1171976347]
 layout_mode = 3
@@ -26,130 +27,182 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-current_tab = 2
+theme_override_font_sizes/font_size = 30
+current_tab = 0
 
-[node name="Sound" type="PanelContainer" parent="TabContainer" unique_id=1901094441]
-visible = false
+[node name="SOUND_OPTION_MENU_TITLE" type="PanelContainer" parent="TabContainer" unique_id=1901094441]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Sound" unique_id=1675895121]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/SOUND_OPTION_MENU_TITLE" unique_id=1675895121]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Sound/MarginContainer" unique_id=516180292]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer" unique_id=516180292]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Sound/MarginContainer/ScrollContainer" unique_id=1316758061]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer/ScrollContainer" unique_id=1316758061]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1679619558]
+[node name="Label" type="Label" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1679619558]
 layout_mode = 2
-text = "Sound"
+theme_override_font_sizes/font_size = 32
+text = "AUDIO_SETTINGS_TITLE_LABEL"
 
-[node name="AudioSettingsSlider" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1659974738 instance=ExtResource("1_hijyy")]
+[node name="AudioSettingsSlider" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1659974738 instance=ExtResource("1_hijyy")]
 layout_mode = 2
+display_name = "MASTER_AUDIO_SETTINGS_SLIDER"
 bus_name = "Master"
 
-[node name="AudioSettingsSlider2" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2097889598 instance=ExtResource("1_hijyy")]
+[node name="AudioSettingsSlider2" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2097889598 instance=ExtResource("1_hijyy")]
 layout_mode = 2
+display_name = "MUSIC_AUDIO_SETTINGS_SLIDER"
 bus_name = "Music"
 
-[node name="AudioSettingsSlider3" parent="TabContainer/Sound/MarginContainer/ScrollContainer/VBoxContainer" unique_id=754994215 instance=ExtResource("1_hijyy")]
+[node name="AudioSettingsSlider3" parent="TabContainer/SOUND_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=754994215 instance=ExtResource("1_hijyy")]
 layout_mode = 2
+display_name = "SFX_AUDIO_SETTINGS_SLIDER"
 bus_name = "SFX"
 
-[node name="Graphics" type="PanelContainer" parent="TabContainer" unique_id=1620612519]
+[node name="CloseButton" type="Button" parent="TabContainer/SOUND_OPTION_MENU_TITLE" unique_id=1512507114]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "X"
+flat = true
+
+[node name="GRAPHIC_OPTIONS_MENU_TITLE" type="PanelContainer" parent="TabContainer" unique_id=1620612519]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Graphics" unique_id=1354544210]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE" unique_id=1354544210]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Graphics/MarginContainer" unique_id=62255331]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer" unique_id=62255331]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer" unique_id=1583461452]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer/ScrollContainer" unique_id=1583461452]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1369032958]
+[node name="Label" type="Label" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1369032958]
 layout_mode = 2
-text = "Graphics"
+theme_override_font_sizes/font_size = 32
+text = "GRAPHICS_SETTINGS_TITLE_LABEL"
 
-[node name="Window_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" unique_id=346404865 instance=ExtResource("1_l6u1e")]
-layout_mode = 2
-
-[node name="Window_Resolution_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" unique_id=851149458 instance=ExtResource("2_imus1")]
+[node name="Window_Mode_Button" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=346404865 instance=ExtResource("1_l6u1e")]
 layout_mode = 2
 
-[node name="Controls" type="PanelContainer" parent="TabContainer" unique_id=887409667]
+[node name="GameLanguage_Button" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=511246894 instance=ExtResource("1_l6u1e")]
+layout_mode = 2
+script = ExtResource("5_0md2n")
+display_name = "GRAPHIC_GAME_LANGUAGE"
+
+[node name="Window_Resolution_Button" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=851149458 instance=ExtResource("2_imus1")]
+visible = false
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE" unique_id=1804706535]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "X"
+flat = true
+
+[node name="CONTROLS_OPTION_MENU_TITLE" type="PanelContainer" parent="TabContainer" unique_id=887409667]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls" unique_id=1177559582]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE" unique_id=1177559582]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer" unique_id=788521196]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer" unique_id=788521196]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer" unique_id=437843056]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer" unique_id=437843056]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1336230276]
+[node name="Label" type="Label" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1336230276]
 layout_mode = 2
-text = "Controls Settings"
+theme_override_font_sizes/font_size = 32
+text = "CONTROL_SETTINGS_TITLE_LABEL"
 
-[node name="ForwardHotKeyButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1844563566 instance=ExtResource("1_xmc1j")]
+[node name="ForwardHotKeyButton" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1844563566 instance=ExtResource("1_xmc1j")]
 layout_mode = 2
 action_name = "move_forward"
+display_name = "C_MOVE_FORWARD_ACTION"
+tool_tip = "C_MOVE_FORWARD_TOOLTIP"
 
-[node name="LeftHotKeyButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1703844980 instance=ExtResource("1_xmc1j")]
+[node name="LeftHotKeyButton" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1703844980 instance=ExtResource("1_xmc1j")]
 layout_mode = 2
 action_name = "move_left"
+display_name = "C_MOVE_LEFT_ACTION"
+tool_tip = "C_MOVE_LEFT_TOOLTIP"
 
-[node name="RightHotKeyButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2002834390 instance=ExtResource("1_xmc1j")]
+[node name="RightHotKeyButton" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=2002834390 instance=ExtResource("1_xmc1j")]
 layout_mode = 2
 action_name = "move_right"
+display_name = "C_MOVE_RIGHT_ACTION"
+tool_tip = "C_MOVE_RIGHT_TOOLTIP"
 
-[node name="BackwardHotKeyButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=866441861 instance=ExtResource("1_xmc1j")]
+[node name="BackwardHotKeyButton" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=866441861 instance=ExtResource("1_xmc1j")]
 layout_mode = 2
 action_name = "move_backward"
+display_name = "C_MOVE_BACKWARD_ACTION"
+tool_tip = "C_MOVE_BACKWARD_TOOLTIP"
 
-[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1883545976]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1883545976]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="InteractHotKeyButton" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" unique_id=922407657 instance=ExtResource("1_xmc1j")]
+[node name="InteractHotKeyButton" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE/MarginContainer/ScrollContainer/VBoxContainer" unique_id=922407657 instance=ExtResource("1_xmc1j")]
 layout_mode = 2
 action_name = "interact"
+display_name = "C_MOVE_INTERACT_ACTION"
+tool_tip = "C_INTERACT_TOOLTIP"
+
+[node name="CloseButton" type="Button" parent="TabContainer/CONTROLS_OPTION_MENU_TITLE" unique_id=448997993]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "X"
+flat = true
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1058470964]
 
 [node name="CloseButton" type="Button" parent="." unique_id=843070247]
+visible = false
 layout_mode = 0
 offset_left = 404.0
 offset_top = 9.0
 offset_right = 422.0
 offset_bottom = 40.0
+theme_override_font_sizes/font_size = 32
 text = "X"
 flat = true
 
+[connection signal="pressed" from="TabContainer/SOUND_OPTION_MENU_TITLE/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TabContainer/GRAPHIC_OPTIONS_MENU_TITLE/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TabContainer/CONTROLS_OPTION_MENU_TITLE/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3 uid="uid://cfr8tnad6aqqq"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_luuo7"]
+[ext_resource type="Resource" uid="uid://4ien2e06ifyw" path="res://GameItems/Items/FinishedFoods/mianesa_finished.tres" id="2_vjs8i"]
+[ext_resource type="Resource" uid="uid://mpkcccxc0h60" path="res://GameItems/Items/FinishedFoods/mianesa_cooked.tres" id="3_c7olh"]
+[ext_resource type="Resource" uid="uid://dog2i6ckbl8ej" path="res://GameItems/Items/BaseIngredients/cheese.tres" id="4_dr4nf"]
+[ext_resource type="Resource" uid="uid://jrj1a3kmmhrr" path="res://GameItems/Items/BaseIngredients/tomato_raw.tres" id="5_yr4nm"]
+[ext_resource type="Script" uid="uid://ca3qt2exyeowq" path="res://GameItems/Scripts/crafting_recipe.gd" id="6_gjw2e"]
+
+[resource]
+script = ExtResource("6_gjw2e")
+required_items = Dictionary[ExtResource("1_luuo7"), int]({
+ExtResource("3_c7olh"): 1,
+ExtResource("4_dr4nf"): 2,
+ExtResource("5_yr4nm"): 1
+})
+output_item = ExtResource("2_vjs8i")
+metadata/_custom_type_script = "uid://ca3qt2exyeowq"

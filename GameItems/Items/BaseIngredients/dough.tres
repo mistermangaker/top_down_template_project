@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://ckvlke2wiq3qh"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_sdk0w"]
+[ext_resource type="Texture2D" uid="uid://c36qmem18rqrx" path="res://Assets/Sprites/ItemSprites/dough.png" id="2_721lx"]
+
+[resource]
+script = ExtResource("1_sdk0w")
+texture = ExtResource("2_721lx")
+display_name = "DOUGH"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

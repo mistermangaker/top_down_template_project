@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://yf2ys8t05pls"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_cky1g"]
+[ext_resource type="Texture2D" uid="uid://bunwkoyan6hf2" path="res://Assets/Sprites/ItemSprites/Empanadas raw.png" id="2_ykknh"]
+
+[resource]
+script = ExtResource("1_cky1g")
+texture = ExtResource("2_ykknh")
+display_name = "UNCOOKED_EMPNADA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

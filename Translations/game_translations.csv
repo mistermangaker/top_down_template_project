@@ -1,0 +1,89 @@
+KEY,en,es
+GRAPHIC_OPTIONS_MENU_TITLE,Graphics,Gráficos
+SOUND_OPTION_MENU_TITLE,Sound,Sonido
+CONTROLS_OPTION_MENU_TITLE,Controls,Controles
+GRAPHICS_SETTINGS_TITLE_LABEL,Graphics Settings,Configuración de Gráficos
+CONTROL_SETTINGS_TITLE_LABEL,Control Settings,Configuración de Control
+AUDIO_SETTINGS_TITLE_LABEL,Audio Settings,Configuración de Audio
+GRAPHIC_WINDOW_MODE,Window Mode,Modo Pestaña
+GRAPHIC_GAME_LANGUAGE,Language,Lenguaje
+GRAPHIC_GAME_LANGUAGE_EN_NAME,English,Inglés
+GRAPHIC_GAME_LANGUAGE_ES_NAME,Spanish,Español
+C_MOVE_FORWARD_ACTION,Move up,Mover hacia Arriba
+C_MOVE_BACKWARD_ACTION,Move Down,Mover hacia Abajo
+C_MOVE_LEFT_ACTION,Move Left,Mover hacia la Izquierda
+C_MOVE_RIGHT_ACTION,Move Right,Mover hacia la Derecha
+C_MOVE_INTERACT_ACTION,Interact,Interactuar
+C_MOVE_FORWARD_TOOLTIP,The button to move north,El botón para moverse al norte
+C_MOVE_BACKWARD_TOOLTIP,The button to move south,El botón para moverse al sur
+C_MOVE_LEFT_TOOLTIP,The button to move left,El botón para moverse hacia la izquierda
+C_MOVE_RIGHT_TOOLTIP,The button to move right,El botón para moverse hacia la derecha
+C_INTERACT_TOOLTIP,The button to interact with objects,El botón para interactuar con objetos
+MASTER_AUDIO_SETTINGS_SLIDER,Master Volume,Volumen maestro
+MUSIC_AUDIO_SETTINGS_SLIDER,Music Volume,Volumen de música
+SFX_AUDIO_SETTINGS_SLIDER,SFX Volume,Volumen SFX
+MAIN_MENU_START_BUTTON,Start,Comenzar
+MAIN_MENU_OPTIONS_BUTTON,Options,Opciones
+MAIN_MENU_QUIT_BUTTON,Quit,Salir
+MAIN_MENU_TITLE,Kitchen Simulator,Nombre_juego
+PRESS_TO_INTERACT_START,press {button} to,Precionar {button}
+INTERACT_VERB_NAME,{interaction_verb} with {interactable_object},{interaction_verb} con {interactable_object}
+CAN_NOT_INTERACT_GENERIC,not able to,No es posible
+INTERACT_GENERIC,interact,interactuar
+INTERACT_OPEN,open,Abrir
+INTERACT_TRASH,trash {item} in {interactable_object},Tirar {item} en {interactable_object}
+INTERACT_PLACE,place  {item} in {interactable_object},Colocar {item} en {interactable_object}
+INTERACT_PICK_UP,pick up,Recoger
+INTERACT_SET_DOWN,set down,Colocar abajo
+INTERACT_SWAP,swap {food_item} and {this_item},Cambiar {food_item} y {this_item}
+INTERACT_PLACE_ON_PLATE,place {food_item} on {this_item},Colocar {food_item} en {this_item}
+INTERACT_CHECK_OUT_ITEM,check out order,Producto Final
+INTERACTABLE_SHELF,counter,Mesada
+INTERACTABLE_FRIDGE,fridge,Heladera
+INTERACTABLE_TRASHCAN,trashcan,Basurero
+INTERACTABLE_PREP_TABLE,food prep table,Mesada
+INTERACTABLE_CHECK_OUT_COUNTER,check out counter,Caja registradora
+INTERACTABLE_PLATE_SHELF,dishes counter,Platos
+INTERACTABLE_FRYINGPAN,frying pan,Sartén
+UI_REQUIRED,Required,Requerido
+UI_FORBIDDEN,Forbidden,Prohibido
+UI_OUTPUT,Output,Resultado
+UI_REQUIRED_ORDERS_NUMBER,Required number of orders,Número requerido de órdenes
+UI_DAY_NUMBER,Day Number:,Día número:
+UI_START,start,Comenzar
+UI_ORDERS,Orders:,Ordenes:
+SUCCESS_LABEL,Success,Éxito
+FAILURE_LABEL,Failure,Fracaso
+DAYEND_ORDERS_COMPLETED_LABEL,Orders Completed:,órdenes Completadas:
+UNCOOKED,Uncooked,Crudo
+COOKED,Cooked,Cosinado
+BAKED,Baked,Horneado
+BURNT,Burnt,Quemado
+POTATO,Potato,Papa
+CHEESE,Cheese,Queso
+EGG,Egg,Huevo
+TOMATO,Tomato,Tomate
+DOUGH,Dough,Masa
+BREAD,Bread,Pan
+BREADCRUMBS,Bread Crumbs,Migas de Pan
+MEAT,Meat,Carne
+TOMATO,Tomato,Tomate
+EMPANDA,Empanda,Empanda
+GRILLEDCHEESE,Grilled Cheese,Tostado de Queso
+MILANESA,Milanesa,Milanesa
+PIZZA,Pizza,Pizza
+REVUETOGRAMAJO,Rivueto Gramajo,Rivueto Gramajo
+SODALIME,Lemon Soda,Gaseosa de Lima
+SODACHERRY,Cherry Soda,Gaseosa de Cereza
+SODALEMON,Lemon Soda,Gaseosa de limón
+BEER,Beer,Cerveza
+PLATE,Plate,Plato
+UI_DAY_FINISHED,Day Finished,Fin del Día
+UI_DAY_START,Day Starting In,Principio del Día
+UI_CLOSE,Close,Cerrar
+UI_MAKE_ITEM,Make Item,Crear
+UI_CONTINUE,Continue,Continuar
+UI_MAIN_MENU,Main Menu,Menú principal
+UI_OPTIONS,Options,Opciones
+UI_PRESS_TO_START,Press {button} to start,Presiona {button} para comenzar.
+UI_PAUSED,Paused,Pausa

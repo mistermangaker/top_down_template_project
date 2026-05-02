@@ -16,8 +16,9 @@ func _do_interaction_internal()->void:
 			enterance_location_id
 			)
 	else:
-		var level = ResourceLoader.load(path_to_level_data) as LevelData
-		GameManager.scene_manager.load_scene(level)
+		pass
+		#var level = ResourceLoader.load(path_to_level_data) as LevelData
+		#GameManager.scene_manager.load_scene(level)
 
 
 func get_movement_dir():

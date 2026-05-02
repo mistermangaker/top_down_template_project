@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cqnx4c51va4fx"]
+
+[ext_resource type="Script" uid="uid://bd51e0m2tlvg2" path="res://Interactables/InteractableObjectUI/prep_table_item_button.gd" id="1_hghdg"]
+
+[node name="PrepTableItemButton" type="PanelContainer" unique_id=279966214]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_vertical = 0
+script = ExtResource("1_hghdg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1634257632]
+layout_mode = 2
+
+[node name="ItemButton" type="Button" parent="HBoxContainer" unique_id=1040702933]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+flat = true
+expand_icon = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=2112502831]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RequiredItems" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1515824201]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ForbiddenItems" type="HBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1392288239]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="HBoxContainer/ItemButton" to="." method="_on_item_button_pressed"]

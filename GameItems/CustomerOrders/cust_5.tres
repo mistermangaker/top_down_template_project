@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CustomerOrder" format=3 uid="uid://cd2nylkp57ywr"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_qu0pi"]
+[ext_resource type="Resource" uid="uid://dj0b733m5wnwp" path="res://GameItems/Items/BaseIngredients/potato_raw.tres" id="2_ks01e"]
+[ext_resource type="Script" uid="uid://cgsw66eauin01" path="res://GameItems/Scripts/customer_order.gd" id="4_3j2c8"]
+
+[resource]
+script = ExtResource("4_3j2c8")
+required_items = Dictionary[ExtResource("1_qu0pi"), int]({
+ExtResource("2_ks01e"): 1
+})
+metadata/_custom_type_script = "uid://cgsw66eauin01"

@@ -36,13 +36,27 @@ func _get_interaction_intro()->String:
 		final = _get_can_not_do_interaction_text()
 	return final
 
+func get_interactable_name()->String:
+	return tr(interactable_name)
+
+func get_interactable_verb()->String:
+	return tr(interaction_verb)
+
 func _get_can_do_interaction_text()->String:
-	return "press: %s to %s with %s " % [_get_interact_key_string(),interaction_verb,interactable_name]
+	var interaction_start = tr("PRESS_TO_INTERACT_START")
+	interaction_start = interaction_start.format({"button":_get_interact_key_string()})
+	var verb_name = tr("INTERACT_VERB_NAME").format({"interaction_verb":get_interactable_verb(),"interactable_object":get_interactable_name()} )
+	#return "press: %s to %s with %s " % [_get_interact_key_string(),interaction_verb,interactable_name]
+	return interaction_start+" "+verb_name
 
 func _get_can_not_do_interaction_text()->String:
-	return  "can't %s with %s " % [interaction_verb,interactable_name]
+	var interaction_start = tr("CAN_NOT_INTERACT_GENERIC").strip_edges()
+	var verb_name = tr("INTERACT_VERB_NAME").format({"interaction_verb":get_interactable_verb(),"interactable_object":get_interactable_name()} )
+	#return  "can't %s with %s " % [interaction_verb,interactable_name]
+	return interaction_start+" "+verb_name 
+
 func should_be_visible()->bool:
-	return can_interact()
+	return true
 
 func can_interact()->bool:
 	return true

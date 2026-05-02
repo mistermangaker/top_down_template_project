@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c3e0a3ar24wr7"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_oxqu1"]
+[ext_resource type="Texture2D" uid="uid://dn0dup4uovbwr" path="res://Assets/Sprites/ItemSprites/cooked_meat.png" id="2_oxqu1"]
+
+[resource]
+script = ExtResource("1_oxqu1")
+texture = ExtResource("2_oxqu1")
+display_name = "COOKED_MEAT"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

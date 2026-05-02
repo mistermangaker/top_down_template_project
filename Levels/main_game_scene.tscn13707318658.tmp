@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cendkbj3a1dsa"]
+
+[ext_resource type="PackedScene" uid="uid://7q8vebrbubhv" path="res://Characters/PlayerCharacter/player.tscn" id="1_3x0gg"]
+[ext_resource type="Script" uid="uid://ck5w36vb53mrx" path="res://GameScene/LevelSystem/game_level.gd" id="1_gc0f4"]
+[ext_resource type="PackedScene" uid="uid://c8v7jvsygj7cq" path="res://Interactables/KitchenInteractables/item_shelf_interactable.tscn" id="2_ldqed"]
+[ext_resource type="PackedScene" uid="uid://bvjdoj4tepnyo" path="res://Interactables/KitchenInteractables/fridge_interactables.tscn" id="5_1scti"]
+[ext_resource type="PackedScene" uid="uid://b7f35okeobahr" path="res://Interactables/InteractableObjectUI/fridge_closable_ui.tscn" id="6_agyc2"]
+[ext_resource type="PackedScene" uid="uid://bkq2m2nhg0wej" path="res://Interactables/KitchenInteractables/grill_interactable.tscn" id="7_47v2c"]
+[ext_resource type="PackedScene" uid="uid://cha5sh8eh6yeh" path="res://Interactables/KitchenInteractables/trash_interactable.tscn" id="7_agyc2"]
+
+[node name="MainGameScene" type="Node2D" unique_id=278454360 node_paths=PackedStringArray("player")]
+y_sort_enabled = true
+script = ExtResource("1_gc0f4")
+player = NodePath("Player")
+
+[node name="Player" parent="." unique_id=2074472804 instance=ExtResource("1_3x0gg")]
+
+[node name="WallTileMap" type="TileMapLayer" parent="." unique_id=1492320050]
+
+[node name="FloorTileMap" type="TileMapLayer" parent="." unique_id=88367938]
+
+[node name="WallDecor" type="TileMapLayer" parent="." unique_id=1153022504]
+
+[node name="ItemShelf" parent="." unique_id=1917936089 instance=ExtResource("2_ldqed")]
+position = Vector2(211, 64)
+
+[node name="FridgeInteractable" parent="." unique_id=1732990632 instance=ExtResource("5_1scti")]
+position = Vector2(309, 65)
+menu_scene = ExtResource("6_agyc2")
+
+[node name="TrashInteractable" parent="." unique_id=410735947 instance=ExtResource("7_agyc2")]
+position = Vector2(387, 113)
+
+[node name="GrillInteractable" parent="." unique_id=641524855 instance=ExtResource("7_47v2c")]
+position = Vector2(272, 63)

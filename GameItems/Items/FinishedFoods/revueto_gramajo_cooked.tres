@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cg67tfujak2of"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_i8cgn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xr8h2"]
+load_path = "res://.godot/imported/revueto_gramajo.png-42e39b1b3cef42bb60ff35ceaeb67dec.ctex"
+
+[resource]
+script = ExtResource("1_i8cgn")
+texture = SubResource("CompressedTexture2D_xr8h2")
+display_name = "REVUETOGRAMAJO"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"

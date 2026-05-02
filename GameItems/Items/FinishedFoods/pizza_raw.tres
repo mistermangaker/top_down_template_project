@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://3pl7rc4tobe4"]
+
+[ext_resource type="Script" uid="uid://c8gsdlb8dlpb2" path="res://GameItems/Scripts/item_data.gd" id="1_btyau"]
+[ext_resource type="Texture2D" uid="uid://405qsswfowtt" path="res://Assets/Sprites/ItemSprites/Pizza Crust raw.png" id="2_76ju4"]
+
+[resource]
+script = ExtResource("1_btyau")
+texture = ExtResource("2_76ju4")
+display_name = "UNCOOKED_PIZZA"
+metadata/_custom_type_script = "uid://c8gsdlb8dlpb2"
